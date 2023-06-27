@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Informações</title>
+</head>
+<body>
+    <h1>Editar informações</h1>
+    <h3>Confirme quem é você!</h3>
+    <form action="/confirma" method="post">
+        <label for="login">Email</label>
+        <input type="email" name="login" id="login" required placeholder="Email">
+        <label for="nome">Nome De Usuario</label>
+        <input type="text" name="nome" id="nome" required placeholder="Nome">
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" id="senha" required placeholder="Senha">
+        <p> {{ resposta }} </p>
+        <button type="submit">Confirme</button>
+    </form>
+</body>
+</html>
