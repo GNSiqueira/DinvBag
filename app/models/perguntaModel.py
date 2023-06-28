@@ -1,14 +1,14 @@
 class Pergunta:
-    def __init__(self, idPergunta, textoPergunta, alt1, alt2, alt3, alt4, resposta, idTipoPergunta, idQuestionario):
-        self._idpergunta = idPergunta
-        self._textopergunta = textoPergunta
+    def __init__(self, idpergunta, textopergunta, alt1, alt2, alt3, alt4, resposta, idtipopergunta, idquestionario):
+        self._idpergunta = idpergunta
+        self._textopergunta = textopergunta
         self._alt1 = alt1
         self._alt2 = alt2
         self._alt3 = alt3
         self._alt4 = alt4
         self._resposta = resposta
-        self._idtipopergunta = idTipoPergunta
-        self._idquestionario = idQuestionario
+        self._idtipopergunta = idtipopergunta
+        self._idquestionario = idquestionario
 
     #encapsulamento idpergunta
     def get_idpergunta(self):

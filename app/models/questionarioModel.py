@@ -1,6 +1,6 @@
 class Questionario:
-    def __init__(self, idQuestionario, estagio, acertos):
-        self._idquestionario = idQuestionario
+    def __init__(self, idquestionario, estagio, acertos):
+        self._idquestionario = idquestionario
         self._estagio = estagio
         self._acertos = acertos
 
