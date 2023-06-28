@@ -14,7 +14,6 @@ class Pergunta:
     def get_idpergunta(self):
        return self._idpergunta
     
-    
     #encápsulamento textopergunta
     def get_textopergunta(self):
         return self._textopergunta
