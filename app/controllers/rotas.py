@@ -55,7 +55,7 @@ def update_nome():
     resposta = usuarioController.update_nome_form()
     return render_template('editar.html', resposta_nome = resposta)
 
-@app.route('/delet', methods=['POST'])
+@app.route('/delet')
 def delet():
     return render_template('deletar.html')
 
