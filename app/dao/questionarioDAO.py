@@ -41,7 +41,7 @@ def read_questionario():
         cursor.close()
         conexao.close_connection(conn)
 
-#atualizar questionario
+#atualizar questionario(estagio)
 def update_questionario_estagio(id, estagio):
     conexao = Conexao()
     conn = conexao.connect()
@@ -57,6 +57,8 @@ def update_questionario_estagio(id, estagio):
     finally:
         conexao.close_connection(conn)
         cursor.close()
+
+#atualizar questionario(acertos)
 def update_questionario_acertos(id, acertos):
     conexao = Conexao()
     conn = conexao.connect()
