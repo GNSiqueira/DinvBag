@@ -10,6 +10,8 @@ def create_resposta(descricaoresposta, alternativaescolhida, datapergunta, idusu
         query = ("insert into resposta (descricaoresposta, alternativaescolhida, datapergunta, idusuario, idperguta) values ({}, {}, {}, {}, {})".format(descricaoresposta, alternativaescolhida, datapergunta, idusuario, idperguta))
         cursor.execute(query)
         conn.commit()
+        return "Resposta adicionada com sucesso!"
+    
     except(Exception, Error) as error:
         return("Erro ao inserir dados:", error)
     finally:
@@ -25,6 +27,7 @@ def update_resposta_descricao(id, descricao):
         query = ("update resposta set descricaoresposta = {} where idresposta = {}".format(id, descricao))
         cursor.execute(query)
         conn.commit()
+        return "Descrição alterada com sucesso!"
     except(Exception, Error) as error:
         return("Erro au atualizar informação:", error)
     finally:
@@ -40,6 +43,8 @@ def update_resposta_alternativa(id, alternativa):
         query = ("update resposta set alternativaescolhida = {} where idresposta = {}".format(id, alternativa))
         cursor.execute(query)
         conn.commit()
+        return "Alternativa escolhica atualizada com sucesso!"
+
     except(Exception, Error) as error:
         return("Erro au atualizar informação:", error)
     finally:
@@ -55,6 +60,8 @@ def update_resposta_descricao(id, data):
         query = ("update resposta set dataresposta = {} where idresposta = {}".format(id, data))
         cursor.execute(query)
         conn.commit()
+        return "Data da pergunta atualizada com sucesso!"
+
     except(Exception, Error) as error:
         return("Erro au atualizar informação:", error)
     finally:
@@ -70,6 +77,8 @@ def update_resposta_idusuario(id, idusuario):
         query = ("update resposta set idusuario = {} where idresposta = {}".format(id, idusuario))
         cursor.execute(query)
         conn.commit()
+        return "IdUsuario atualizado com sucesso!"
+
     except(Exception, Error) as error:
         return("Erro au atualizar informação:", error)
     finally:
@@ -85,6 +94,8 @@ def update_resposta_idpergunta(id, idpergunta):
         query = ("update resposta set idpergunta = {} where idresposta = {}".format(id, idpergunta))
         cursor.execute(query)
         conn.commit()
+        return "IdPergunta atualizada com sucesso!"
+
     except(Exception, Error) as error:
         return("Erro au atualizar informação:", error)
     finally:
@@ -119,6 +130,9 @@ def delet_resposta(id):
         cursor = conn.cursor()
         query = ("delete from resposta where idresposta = {}".format(id))
         cursor.execute(query)
+        conn.commit()
+        return "Resposta deletada com sucesso!"
+    
     except(Exception, Error) as error:
         return ("Erro ao deletar resposta", error)
     finally:
