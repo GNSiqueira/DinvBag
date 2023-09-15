@@ -64,7 +64,7 @@ def __init__():
     return render_template('pegarid.html', usuarios = usuarios)
 
 #precessar o id
-@app.route('/processar', methods=['GET'])
+@app.route('/processar', methods=['POST'])
 def processar():
     usuarios = []
     results = usuarioDAO.read_usuario()
