@@ -41,7 +41,9 @@ def update_tipo_pergunta_nometipopergunta(nometipopergunta, idtipopergunta):
     try:
         cursor = conn.cursor()
         query = "update tipopergunta set nometipopergunta = '{}' where idtipopergunta = '{}';".format(nometipopergunta, idtipopergunta)
-
+        cursor.execute(query)
+        conn.commit()
+        return("Nome de tipo pergunta alterado com sucesso!")
     except (Exception, Error) as error:
         return ("Erro ao alterar tipo de pergunta: " , error)
     finally: 
@@ -54,6 +56,9 @@ def update_tipo_pergunta_descricaopergunta(descricaopergunta, idtipopergunta):
     try:
         cursor = conn.cursor()
         query = "update tipopergunta set descricaopergunta = '{}' where idtipopergunta = '{}';".format(descricaopergunta, idtipopergunta)
+        cursor.execute(query)
+        conn.commit()
+        return("Descrição do tipo pergunta alterado com sucesso!")
 
     except (Exception, Error) as error:
         return ("Erro ao alterar descricao tipo pergunta: " , error)
@@ -61,3 +66,19 @@ def update_tipo_pergunta_descricaopergunta(descricaopergunta, idtipopergunta):
         cursor.close()
         conexao.close_connection(conn)
 
+def delete_tipo_pergunta(idtipopergunta):
+    conexao = Conexao()
+    conn = conexao.connect()
+    try:
+        cursor = conn.cursor()
+        query = ("delete from tipopergunta where idtipopergunta = {};".format(idtipopergunta))
+        cursor.execute(query)
+        conn.commit()
+        return("Tipo pergunta alterado com sucesso!")
+    
+    except (Exception, Error) as error:
+        return("Erro ao delatar tipo pergunta: ", error)
+    finally:
+        cursor.close()
+        conexao.close_connection(conn)
+        
