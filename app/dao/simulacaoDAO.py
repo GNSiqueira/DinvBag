@@ -134,7 +134,7 @@ def delet_simulacao(id):
     conn = conexao.connect()
     try:
         cursor = conn.cursor()
-        query = ("delet from simulacao where idsimulacao = {}".format(id))
+        query = ("delete from simulacao where idsimulacao = {}".format(id))
         cursor.execute(query)
         conn.commit()
         return "Simulação excluida com sucesso!"
