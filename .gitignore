@@ -4,9 +4,5 @@ venv/
 
 *.pyc
 
-*.cpython*
+*venv/
 
-venv/
-
-*311.pyc*
-s
