@@ -1,23 +1,23 @@
 class TipoPergunta:
     def __init__(self, idtipopergunta, nometipopergunta, descriçãopergunta):
-        self.idtipopergunta = idtipopergunta
-        self.nometipopergunta = nometipopergunta
-        self.descriçãopergunta = descriçãopergunta
+        self._idtipopergunta = idtipopergunta
+        self._nometipopergunta = nometipopergunta
+        self._descriçãopergunta = descriçãopergunta
 
     #encapsulamento idtipopergunta
     def get_idtipopergunta(self):
-        return self.idtipopergunta
+        return self._idtipopergunta
     def set_idtipopergunta(self, new_idtipopergunta):
-        self.idtipopergunta = new_idtipopergunta
+        self._idtipopergunta = new_idtipopergunta
 
     #encapsulamento nometipopergunta
     def get_nometipopergunta(self):
-        return self.nometipopergunta
+        return self._nometipopergunta
     def set_nometipopergunta(self, new_nometipopergunta):
-        self.nometipopergunta = new_nometipopergunta
+        self._nometipopergunta = new_nometipopergunta
 
     #encapsulamento descriçãopergunta
     def get_descriçãopergunta(self):
-        return self.descriçãopergunta
+        return self._descriçãopergunta
     def set_descriçãopergunta(self, new_descriçãopergunta):
-        self.descriçãopergunta = new_descriçãopergunta
+        self._descriçãopergunta = new_descriçãopergunta
