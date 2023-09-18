@@ -1,0 +1,12 @@
+__pycache__/
+
+venv/
+
+*.pyc
+
+*.cpython*
+
+venv/
+
+*311.pyc*
+s
