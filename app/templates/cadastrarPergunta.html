@@ -7,7 +7,7 @@
 </head>
 <body>
     <h3>Cadastar pergunta</h3>
-    <form action="/cadastrar_pergunta" method="post">
+    <form action="/cadastrar_pergunta_enviar" method="POST">
         <label for="textopergunta">Descrição da pergunta:</label>
         <input type="text" name="textopergunta" id="textopergunta" required placeholder="Texto da pergunta">
         <label for="alt1">Alternativa 1</label>
@@ -20,9 +20,9 @@
         <input type="text" name="alternativa4" id="alt4" required placeholder="Alternativa4">
         <label for="resposta">Resposta</label>
         <input type="text" name="resposta" id="resposta" required placeholder="Resposta">
-        <select name="id_usuario">
-            {% for idtipopegunta in idtipoperguntas %}
-              <option value="{{ tipopergunta.get_nometipopergunta() }}">{{ tipopergunta.get_idtipopergunta() }}</option>
+        <select name="id_tipopergunta">
+            {% for tipopergunta in tipoperguntas %}
+              <option value="{{ tipopergunta.get_idtipopergunta() }}">{{ tipopergunta.get_nometipopergunta() }}</option>
             {% endfor %}
           </select>
         <input type="submit" value="Enviar">

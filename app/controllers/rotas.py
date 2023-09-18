@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from app import app
-from app.controllers import usuarioController
+from app.controllers import usuarioController, perguntaController
 
 @app.route('/')
 def index():
@@ -63,3 +63,8 @@ def delet():
 def deletar():
     resposta = usuarioController.delet_form()
     return render_template('deletar.html', resposta = resposta)
+
+@app.route('/cadastrarP', methods=['GET'])
+def cadastrar_pergunta():
+    tipoperguntas = perguntaController.carregar_tipo()
+    return render_template('cadastrarpergunta.html', tipoperguntas = tipoperguntas)
