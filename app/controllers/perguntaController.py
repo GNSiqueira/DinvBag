@@ -1,6 +1,6 @@
 from app.models.tipoperguntaModel import TipoPergunta
 from app.dao import perguntaDAO, tipoPerguntaDAO
-from flask import render_template, request
+from flask import request
 
 def carregar_tipo():
     tipoperguntas = []
