@@ -7,7 +7,7 @@ def create_pergunta(textopergunta, alt1, alt2, alt3, alt4, resposta, idpergunta,
     conn = conexao.connect()
     try:
         cursor = conn.cursor()
-        query = ("insert into pergunta (textopegunta, alt1, alt2, alt3, alt4, resposta, idpergunta, idquestionario) values({}, {},{}, {},{}, {},{}, {})".format(textopergunta, alt1, alt2, alt3, alt4, resposta, idpergunta, idquestionario))
+        query = ("insert into pergunta (textopergunta, alt1, alt2, alt3, alt4, resposta, idtipopergunta, idquestionario) values ('{}','{}','{}','{}','{}','{}',{},{});".format(textopergunta, alt1, alt2, alt3, alt4, resposta, idpergunta, idquestionario))
         cursor.execute(query)
         conn.commit()
 

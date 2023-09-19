@@ -65,6 +65,11 @@ def deletar():
     return render_template('deletar.html', resposta = resposta)
 
 @app.route('/cadastrarP', methods=['GET'])
-def cadastrar_pergunta():
+def cadastrar_pergunta_entrar():
     tipoperguntas = perguntaController.carregar_tipo()
     return render_template('cadastrarpergunta.html', tipoperguntas = tipoperguntas)
+
+@app.route("/cadastrar_pergunta_enviar", methods={'POST'})
+def cadastrar_pergunta():
+    resposta = perguntaController.cadastrar_pergunta()
+    return render_template('cadastrarpergunta.html', resposta = resposta)
