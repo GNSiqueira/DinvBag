@@ -3,10 +3,7 @@ from app.dao import usuarioDAO
 from flask import request, render_template
 from app.controllers.rotas import app
 
-id_sisten = None
-
 #metodo de cadastro
-@app.route('/singup', methods=['GET'])
 def singup_form():
     user = None
     nome = None
@@ -29,19 +26,18 @@ def singup_form():
             return resposta
         
 #method de login          
-@app.route('/login', methods=['GET'])
-def login_form():
+def login():
     login = None
     senha = None
     login = request.form['email']
     senha = request.form['senha']
     if usuarioDAO.verificar_usuario_email(login) == login:
         if usuarioDAO.verificar_usuario_senha(login) == senha:
-            return True
+            return 'Usuario entra'
         else:
-            return False
+            return  'Usuario ou senha invalida'
     else:
-        return False
+        return  'Usuario ou senha invalida'
     
 #metodo de listar
 @app.route('/listar', methods=['GET'])
