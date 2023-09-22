@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="logincadastrar.css">
+  <title>Tela de Login</title>
+  
+</head>
+<body>
+  <div class="login-container">
+    <h2>Tela de cadastro</h2>
+    <form action="#">
+      <input type="email" placeholder="email" required>
+      <input type="text" placeholder="Usuário" required>
+      <input type="password" placeholder="Senha" required>
+      <button type="submit"> <strong>E N T R A R</strong></button>
+    </form>
+    <div class="options">
+      <a href="loginprincipal.html" id="signup-link">Fazer Login</a>
+     
+    </div>
+  </div>
+  
+  <script>
+    const body = document.body;
+    const signupLink = document.getElementById('signup-link');
+
+    signupLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      
+      // Primeira parte da transição: muda para a cor azul
+      body.style.backgroundColor = '#534e4e';
+
+      // Aguarda um curto período de tempo para a transição ser visível
+      setTimeout(function() {
+        // Redireciona para a página após a transição
+        window.location.href = signupLink.getAttribute('href');
+      }, 500); // Tempo de espera para a primeira parte da transição
+    });
+  </script>
+  </script>
+</body>
+</html>
