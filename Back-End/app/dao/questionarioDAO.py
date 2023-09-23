@@ -3,13 +3,13 @@ from app.config.conexao import Conexao
 from app.models import questionarioModel
 
 #cria um metodo de cadastrar questionario
-def create_questionario(estagio, acertos):
+def create_questionario(estagio, acertos, id_usuario):
     #cria conexao com o banco
     conexao = Conexao()
     conn = conexao.connect()
     try: 
         cursor = conn.cursor()
-        query = ("insert into questionario (fase_questionario, acertos_questionario) values ('{}', {})".format(estagio, acertos))
+        query = ("insert into questionario (fase_questionario, acertos_questionario, id_questionario) values ('{}', {}, {})".format(estagio, acertos, id_usuario))
         cursor.execute(query)
         conn.commit()
 
@@ -65,6 +65,23 @@ def update_questionario_acertos(id, acertos):
     try:
         cursor = conn.cursor()
         query = ("update questionario set acertos_questionario = '{}' where id_questionario = {}".format(acertos, id))
+        cursor.execute(query)
+        conn.commit()
+
+        return("Acertos atualizado com sucesso!")
+    except(Exception, Error) as error:
+        return("Error ao atualizar questionario", error)
+    finally:
+        conexao.close_connection(conn)
+        cursor.close()
+
+#atualizar questionario(id_usuario)
+def update_questionario_acertos(id, acertos):
+    conexao = Conexao()
+    conn = conexao.connect()
+    try:
+        cursor = conn.cursor()
+        query = ("update questionario set id_usuario = '{}' where id_questionario = {}".format(acertos, id))
         cursor.execute(query)
         conn.commit()
 
