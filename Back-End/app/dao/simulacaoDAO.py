@@ -8,7 +8,7 @@ def create_simulacao(datasimulacao, valor, datainicial, retorno, acao, idusuario
 
     try:
         cursor = conn.cursor()
-        query = ("insert into simulacao (datasimulacao, valor, datainicial, retorno, acao, idusuario) values "+
+        query = ("insert into simulacao (data_simulacao, valor_simulacao, data_ini_simulacao, retorno_simulacao, acao_simulacao, id_usuario) values "+
                  "({}, {}, {}, {}, {}, {})".format(datasimulacao, valor, datainicial, retorno, acao, idusuario))
         cursor.execute(query)
         conn.commit()
@@ -21,14 +21,13 @@ def create_simulacao(datasimulacao, valor, datainicial, retorno, acao, idusuario
         conexao.close_connection(conn)
         cursor.close()
 
-
 #update simulação(datasimulacao)
 def update_simulacao_datasimulacao(id, inform):
     conexao = Conexao()
     conn = conexao.connect()
     try:
         cursor = conn.cursor()
-        query = ("update simulacao set datasimulacao = {} where idsimulacao = {}".format(id, inform))
+        query = ("update simulacao set data_simulacao = {} where id_simulacao = {}".format(id, inform))
         cursor.execute(query)
         conn.commit()
         return "Simulação atualizada com sucesso!"
@@ -42,7 +41,7 @@ def update_simulacao_valor(id, inform):
     conn = conexao.connect()
     try:
         cursor = conn.cursor()
-        query = ("update simulacao set valor = {} where idsimulacao = {}".format(id, inform))
+        query = ("update simulacao set valor_simulacao = {} where id_simulacao = {}".format(id, inform))
         cursor.execute(query)
         conn.commit()
         return "Simulação atualizada com sucesso!"
@@ -56,7 +55,7 @@ def update_simulacao_datainicial(id, inform):
     conn = conexao.connect()
     try:
         cursor = conn.cursor()
-        query = ("update simulacao set datainicial = {} where idsimulacao = {}".format(id, inform))
+        query = ("update simulacao set data_ini_simulacao = {} where id_simulacao = {}".format(id, inform))
         cursor.execute(query)
         conn.commit()
         return "Simulação atualizada com sucesso!"
@@ -70,7 +69,7 @@ def update_simulacao_retorno(id, inform):
     conn = conexao.connect()
     try:
         cursor = conn.cursor()
-        query = ("update simulacao set retorno = {} where idsimulacao = {}".format(id, inform))
+        query = ("update simulacao set retorno_simulacao = {} where id_simulacao = {}".format(id, inform))
         cursor.execute(query)
         conn.commit()
         return "Simulação atualizada com sucesso!"
@@ -84,7 +83,7 @@ def update_simulacao_acao(id, inform):
     conn = conexao.connect()
     try:
         cursor = conn.cursor()
-        query = ("update simulacao set acao = {} where idsimulacao = {}".format(id, inform))
+        query = ("update simulacao set acao_simulacao = {} where id_simulacao = {}".format(id, inform))
         cursor.execute(query)
         conn.commit()
         return "Simulação atualizada com sucesso!"
@@ -98,7 +97,7 @@ def update_simulacao_idusuario(id, inform):
     conn = conexao.connect()
     try:
         cursor = conn.cursor()
-        query = ("update simulacao set idusuario = {} where idsimulacao = {}".format(id, inform))
+        query = ("update simulacao set id_usuario = {} where id_simulacao = {}".format(id, inform))
         cursor.execute(query)
         conn.commit()
         return "Simulação atualizada com sucesso!"
@@ -117,7 +116,7 @@ def read_simulacao():
         results = cursor.fetchall()
         simulacoes = []
         for result in results:
-            simulacao = (result[0], result[1], result[2], result[3], result[4], result[5], result[6])
+            simulacao = (result[0], result[1], result[2], result[3], result[4], result[5], result[6], result[7])
             simulacoes.append(simulacao)
         return simulacoes
     
@@ -134,7 +133,7 @@ def delet_simulacao(id):
     conn = conexao.connect()
     try:
         cursor = conn.cursor()
-        query = ("delete from simulacao where idsimulacao = {}".format(id))
+        query = ("delete from simulacao where id_simulacao = {}".format(id))
         cursor.execute(query)
         conn.commit()
         return "Simulação excluida com sucesso!"
