@@ -12,7 +12,7 @@ def create_usuario(inform):
     #executa os comandos no banco e mostra o resultado
     try:
         cursor = conn.cursor()
-        query = "INSERT INTO usuario (nomeusuario, login, senhar, progresso) VALUES (%s, %s, %s, %s)"
+        query = "INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario, progresso_usuario) VALUES (%s, %s, %s, %s)"
         cursor.execute(query, inform)
         conn.commit()
         
@@ -32,7 +32,7 @@ def verificar_usuario_email(inform):
     conn = conexao.connect()
     try:
         cursor = conn.cursor()
-        cursor.execute("select login from usuario where login = '{}'".format(inform))
+        cursor.execute("select email_usuario from usuario where email_usuario = '{}'".format(inform))
         results = cursor.fetchall()
 
         return results[0][0]
@@ -50,7 +50,7 @@ def verificar_usuario_nome(inform):
     conn = conexao.connect()
     try:
         cursor = conn.cursor()
-        cursor.execute("SELECT nomeusuario FROM usuario WHERE login = '{}'".format(inform))
+        cursor.execute("SELECT nome_usuario FROM usuario WHERE email_usuario = '{}'".format(inform))
         result = cursor.fetchall()
 
         return result[0][0]
@@ -70,7 +70,7 @@ def verificar_usuario_senha(inform):
     conn = conexao.connect()
     try:
         cursor = conn.cursor()
-        cursor.execute("select senhar from usuario where login = '{}'".format(inform))
+        cursor.execute("select senhar_usuario from usuario where email_usuario = '{}'".format(inform))
         result = cursor.fetchall()
 
         return result[0][0]
@@ -115,7 +115,7 @@ def update_progresso_usuario(inform, id):
     try:
         # executa os comandos no banco de dados
         cursor = conn.cursor()
-        cursor.execute("update usuario set progresso = '{}' where id = {} ".format(inform, id))
+        cursor.execute("update usuario set progresso_usuario = '{}' where id_usuario = {} ".format(inform, id))
         conn.commit()
 
         return('Progresso alterada com sucesso!')
@@ -136,7 +136,7 @@ def update_nome_usuario(inform, id):
     try:
         # executa os comandos no banco de dados
         cursor = conn.cursor()
-        cursor.execute("update usuario set nomeusuario = '{}' where idusuario = {}".format(inform, id))
+        cursor.execute("update usuario set nome_usuario = '{}' where id_usuario = {}".format(inform, id))
         conn.commit()
 
         return('Nome alterada com sucesso!')
@@ -157,7 +157,7 @@ def update_senha_usuario(inform, id):
     try:
         # executa os comandos no banco de dados
         cursor = conn.cursor()
-        cursor.execute("update usuario set senhar = '{}' where idusuario = {} ".format(inform, id))
+        cursor.execute("update usuario set senha_usuario = '{}' where id_usuario = {} ".format(inform, id))
         conn.commit()
 
         return('Senha alterada com sucesso!')
@@ -178,7 +178,7 @@ def update_login_usuario(inform, id):
     try:
         # executa os comandos no banco de dados
         cursor = conn.cursor()
-        cursor.execute("UPDATE usuario SET login = '{}' WHERE idusuario = {}".format(inform, id))
+        cursor.execute("UPDATE usuario SET email_usuario = '{}' WHERE id_usuario = {}".format(inform, id))
         conn.commit()
 
         return('Login alterado com sucesso!')
@@ -199,7 +199,7 @@ def delete_usuario(inform):
     try:
         #executa as linhas de codigo no banco de dados
         cursor = conn.cursor()
-        cursor.execute("delete from usuario where idusuario = {}".format(inform))
+        cursor.execute("delete from usuario where id_usuario = {}".format(inform))
         conn.commit()
         return('Usuario deletado com sucesso!')
     except(Exception, Error) as error:
@@ -215,7 +215,7 @@ def obter_id(inform):
     conn = conexao.connect()
     try:
         cursor = conn.cursor()
-        cursor.execute("select idusuario from usuario where login = '{}'".format(inform))
+        cursor.execute("select id_usuario from usuario where email_usuario = '{}'".format(inform))
         result = cursor.fetchall()
 
         return result[0][0]
