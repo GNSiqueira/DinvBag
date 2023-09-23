@@ -26,7 +26,7 @@ def read_tipo_pergunta():
         results = cursor.fetchall()
         tipo_perguntas = []
         for result in results:
-            tipo_pergunta = (result[0], result[1], result[2])
+            tipo_pergunta = (result[0], result[1])
             tipo_perguntas.append(tipo_pergunta)
         return tipo_perguntas
     except (Exception, Error) as error:
