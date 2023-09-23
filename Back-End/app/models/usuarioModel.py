@@ -1,36 +1,36 @@
 
 class Usuario:
-    def __init__(self,idusuario, nomeusuario, login, senha, progresso):
-        self._idusuario = idusuario
-        self._nomeusuario = nomeusuario
-        self._login = login
-        self._senha = senha
-        self._progresso = progresso
+    def __init__(self,id_usuario, nome_usuario, email_usuario, senha_usuario, progresso_usuario):
+        self._id_usuario = id_usuario
+        self._nome_usuario = nome_usuario
+        self._email_usuario = email_usuario
+        self._senha_usuario = senha_usuario
+        self._progresso_usuario = progresso_usuario
 
     #encapsulamento idusuario
     def get_idusuario(self):
-        return self._idusuario
+        return self._id_usuario
 
-    # encapsulamento nomeusuario 
-    def get_nomeusuario(self):
-        return self._nomeusuario
-    def set_nomeusuairo(self,new_nomeusuario):
-        self._nomeusuario = new_nomeusuario
+    # encapsulamento nome_usuario 
+    def get_nome_usuario(self):
+        return self._nome_usuario
+    def set_nome_usuairo(self,new_nome_usuario):
+        self._nome_usuario = new_nome_usuario
 
-    # encapsulamento login
-    def get_login(self):
-        return self._login
-    def set_login(self, new_login):
-        self._login = new_login
+    # encapsulamento email_usuario
+    def get_email_usuario(self):
+        return self._email_usuario
+    def set_email_usuario(self, new_email_usuario):
+        self._email_usuario = new_email_usuario
 
-    # encapsulamento senha
-    def get_senha(self):
-        return self._senha
-    def set_senha(self, new_senha):
-        self._senha = new_senha
+    # encapsulamento senha_usuario
+    def get_senha_usuario(self):
+        return self._senha_usuario
+    def set_senha_usuario(self, new_senha_usuario):
+        self._senha_usuario = new_senha_usuario
 
-    # encapsulamento progresso
-    def get_progresso(self):
-        return self._progresso
-    def set_progresso(self, new_progresso):
-        self._progresso = new_progresso
+    # encapsulamento progresso_usuario
+    def get_progresso_usuario(self):
+        return self._progresso_usuario
+    def set_progresso_usuario(self, new_progresso_usuario):
+        self._progresso_usuario = new_progresso_usuario
