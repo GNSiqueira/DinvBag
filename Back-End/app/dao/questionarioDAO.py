@@ -9,7 +9,7 @@ def create_questionario(estagio, acertos):
     conn = conexao.connect()
     try: 
         cursor = conn.cursor()
-        query = ("insert into questionario (estagio, acertos) values ('{}', {})".format(estagio, acertos))
+        query = ("insert into questionario (fase_questionario, acertos_questionario) values ('{}', {})".format(estagio, acertos))
         cursor.execute(query)
         conn.commit()
 
@@ -47,7 +47,7 @@ def update_questionario_estagio(id, estagio):
     conn = conexao.connect()
     try:
         cursor = conn.cursor()
-        query = ("update questionario set estagio = '{}' where = {}".format(estagio, id))
+        query = ("update questionario set fase_questionario = '{}' where = id_questionario = {}".format(estagio, id))
         cursor.execute(query)
         conn.commit()
 
@@ -64,7 +64,7 @@ def update_questionario_acertos(id, acertos):
     conn = conexao.connect()
     try:
         cursor = conn.cursor()
-        query = ("update questionario set acertos = '{}' where = {}".format(acertos, id))
+        query = ("update questionario set acertos_questionario = '{}' where id_questionario = {}".format(acertos, id))
         cursor.execute(query)
         conn.commit()
 
@@ -81,7 +81,7 @@ def delet_questionario(id):
     conn = conexao.connect()
     try:
         cursor = conn.cursor()
-        query = ("delete from questionario where idquestionario = {}".format(id))
+        query = ("delete from questionario where id_questionario = {}".format(id))
         cursor.execute(query)
         conn.commit()
         
