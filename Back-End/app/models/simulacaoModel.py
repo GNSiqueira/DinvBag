@@ -1,57 +1,57 @@
 class Simulacao:
-    def __init__(self, idsimulacao, datasimulacao, valor, datainicial, datafinal, retorno, acao, idusuario):
-        self.idsimulacao = idsimulacao
-        self.datasimulacao = datasimulacao
-        self.valor = valor
-        self.datainicial = datainicial
-        self.datafinal = datafinal
-        self.retorno = retorno
-        self.acao = acao
-        self.idusuario = idusuario
+    def __init__(self, id_simulacao, data_simulacao, valor_simulacao, data_ini_simulacao, data_fin_simulacao, retorno_simulacao, acao_simulacao, id_usuario):
+        self._id_simulacao = id_simulacao
+        self._data_simulacao = data_simulacao
+        self._valor_simulacao = valor_simulacao
+        self._data_ini_simulacao = data_ini_simulacao
+        self._data_fin_simulacao = data_fin_simulacao
+        self._retorno_simulacao = retorno_simulacao
+        self._acao_simulacao = acao_simulacao
+        self._id_usuario = id_usuario
         
-    #encapsulamento idsimulacao
-    def get_idsimulacao(self):
-        return self.idsimulacao
-    def set_idsimulacao(self, new_idsimulacao):
-        self.idsimulacao = new_idsimulacao  
+    #encapsulamento id_simulacao
+    def get_id_simulacao(self):
+        return self._id_simulacao
+    def set_id_simulacao(self, new_id_simulacao):
+        self._id_simulacao = new_id_simulacao  
 
-    #encapsulamento datasimulacao
-    def get_datasimulacao(self):
-        return self.datasimulacao
-    def set_datasimulacao(self, new_datasimulacao):
-        self.datasimulacao = new_datasimulacao
+    #encapsulamento data_simulacao
+    def get_data_simulacao(self):
+        return self._data_simulacao
+    def set_data_simulacao(self, new_data_simulacao):
+        self._data_simulacao = new_data_simulacao
 
-    #encapsulamento valor
-    def get_valor(self):
-        return self.valor
-    def set_valor(self, new_valor):
-        self.valor = new_valor   
+    #encapsulamento valor_simulacao
+    def get_valor_simulacao(self):
+        return self._valor_simulacao
+    def set_valor_simulacao(self, new_valor_simulacao):
+        self._valor_simulacao = new_valor_simulacao   
 
-    #encapsulamento datainicial
-    def get_datainicial(self):
-        return self.datainicial
-    def set_datainicial(self, new_datainicial):
-        self.datainicial = new_datainicial   
+    #encapsulamento data_ini_simulacao
+    def get_data_ini_simulacao(self):
+        return self._data_ini_simulacao
+    def set_data_ini_simulacao(self, new_data_ini_simulacao):
+        self._data_ini_simulacao = new_data_ini_simulacao   
 
-    #encapsulamento datafinal
-    def get_datafinal(self):
-        return self.datafinal
-    def set_datafinal(self, new_datafinal):
-        self.datafinal = new_datafinal   
+    #encapsulamento data_fin_simulacao
+    def get_data_fin_simulacao(self):
+        return self._data_fin_simulacao
+    def set_data_fin_simulacao(self, new_data_fin_simulacao):
+        self._data_fin_simulacao = new_data_fin_simulacao   
 
-    #encapsulamento retorno
-    def get_retorno(self):
-        return self.retorno
-    def set_retorno(self, new_retorno):
-        self.retorno = new_retorno   
+    #encapsulamento retorno_simulacao
+    def get_retorno_simulacao(self):
+        return self._retorno_simulacao
+    def set_retorno_simulacao(self, new_retorno_simulacao):
+        self._retorno_simulacao = new_retorno_simulacao   
 
-    #encapsulamento acao
-    def get_acao(self):
-        return self.acao
-    def set_acao(self, new_acao):
-        self.acao = new_acao    
+    #encapsulamento acao_simulacao
+    def get_acao_simulacao(self):
+        return self._acao_simulacao
+    def set_acao_simulacao(self, new_acao_simulacao):
+        self._acao_simulacao = new_acao_simulacao    
 
-    #encapsulamento idusuario
-    def get_idusuario(self):
-        return self.idusuario
+    #encapsulamento _id_usuario
+    def get__id_usuario(self):
+        return self._id_usuario
 
