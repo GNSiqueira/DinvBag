@@ -1,42 +1,42 @@
 class Resposta:
-    def __init__(self, idresposta, descricaoresposta, alternativacorreta, datapergunta, idusuario, idpergunta):
-        self._idresposta = idresposta
-        self._descricaoresposta = descricaoresposta
-        self._alternativacorreta = alternativacorreta
-        self._datapergunta = datapergunta
-        self._idusuario = idusuario
-        self._idpergunta = idpergunta
+    def __init__(self, id_resposta, alternativa_respondida, alternativa_correta, data_resposta, id_questionario, id_pergunta):
+        self._id_resposta = id_resposta
+        self._alternativa_respondida = alternativa_respondida
+        self._alternativa_correta = alternativa_correta
+        self._data_resposta = data_resposta
+        self._id_questionario = id_questionario
+        self._id_pergunta = id_pergunta
 
-    #encapsulamento idresposta
-    def get_idrespsota(self):
-        return self._idresposta
+    #encapsulamento id_resposta
+    def get_id_respsota(self):
+        return self._id_resposta
     
-    #encapsulamento descricaoresposta
-    def get_descricaoresposta(self):
-        return self._descricaoresposta
-    def set_descricaoresposta(self, new_descricaoresposta):
-        self._descricaoresposta = new_descricaoresposta
+    #encapsulamento alternativa_respondida
+    def get_alternativa_respondida(self):
+        return self._alternativa_respondida
+    def set_alternativa_respondida(self, new_alternativa_respondida):
+        self._alternativa_respondida = new_alternativa_respondida
 
-    #encapsulamento alternativacorreta
-    def get_alternativacorreta(self):
-        return self._alternativacorreta
-    def set_alternativacorreta(self, new_alternativacorreta):
-        self._alternativacorreta = new_alternativacorreta
+    #encapsulamento alternativa_correta
+    def get_alternativa_correta(self):
+        return self._alternativa_correta
+    def set_alternativa_correta(self, new_alternativa_correta):
+        self._alternativa_correta = new_alternativa_correta
     
-    #encapsulamento datapergunta
-    def get_datapergunta(self):
-        return self._datapergunta
-    def set_datapergunta(self, new_datapergunta):
-        self._datapergunta = new_datapergunta
+    #encapsulamento data_resposta
+    def get_data_resposta(self):
+        return self._data_resposta
+    def set_data_resposta(self, new_data_resposta):
+        self._data_resposta = new_data_resposta
 
-    #encapsulamento idusuario
-    def get_idusuario(self):
-        return self._idusuario
-    def set_idusuario(self, new_idusuario):
-        self._idusuario = new_idusuario
+    #encapsulamento id_questionario
+    def get_id_questionario(self):
+        return self._id_questionario
+    def set_id_questionario(self, new_id_questionario):
+        self._id_questionario = new_id_questionario
 
-    #encapsulamento idpergunta
-    def get_idpergunta(self):
-        return self._idpergunta
-    def set_idpergunta(self, new_idpergunta):
-        self._idpergunta = new_idpergunta
+    #encapsulamento id_pergunta
+    def get_id_pergunta(self):
+        return self._id_pergunta
+    def set_id_pergunta(self, new_id_pergunta):
+        self._id_pergunta = new_id_pergunta
