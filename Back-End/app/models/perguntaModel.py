@@ -1,60 +1,54 @@
 class Pergunta:
-    def __init__(self, idpergunta, textopergunta, alt1, alt2, alt3, alt4, resposta, idtipopergunta, idquestionario):
-        self._idpergunta = idpergunta
-        self._textopergunta = textopergunta
-        self._alt1 = alt1
-        self._alt2 = alt2
-        self._alt3 = alt3
-        self._alt4 = alt4
-        self._resposta = resposta
-        self._idtipopergunta = idtipopergunta
-        self._idquestionario = idquestionario
+    def __init__(self, id_pergunta, texto_pergunta, alternativa1, alternativa2, alternativa3, alternativa4, resposta_pergunta, id_tipo_pergunta):
+        self._id_pergunta = id_pergunta
+        self._texto_pergunta = texto_pergunta
+        self._alternativa1 = alternativa1
+        self._alternativa2 = alternativa2
+        self._alternativa3 = alternativa3
+        self._alternativa4 = alternativa4
+        self._resposta_pergunta = resposta_pergunta
+        self._id_tipo_pergunta = id_tipo_pergunta
 
-    #encapsulamento idpergunta
-    def get_idpergunta(self):
-       return self._idpergunta
+    #encapsulamento id_pergunta
+    def get_id_pergunta(self):
+       return self._id_pergunta
     
-    #encápsulamento textopergunta
-    def get_textopergunta(self):
-        return self._textopergunta
-    def set_textopergunta(self, new_textopergunta):
-        self._textopergunta = new_textopergunta
+    #encápsulamento texto_pergunta
+    def get_texto_pergunta(self):
+        return self._texto_pergunta
+    def set_texto_pergunta(self, new_texto_pergunta):
+        self._texto_pergunta = new_texto_pergunta
 
-    #encapsulamento alt1
-    def get_alt1(self):
-        return self._alt1
-    def set_alt1(self, new_alt1):
-        self._alt1 = new_alt1
+    #encapsulamento alternativa1
+    def get_alternativa1(self):
+        return self._alternativa1
+    def set_alternativa1(self, new_alternativa1):
+        self._alternativa1 = new_alternativa1
 
-    #encapsulamento alt2
-    def get_alt2(self):
-        return self._alt2
-    def set_alt2(self, new_alt2):
-        self._alt2 = new_alt2
+    #encapsulamento alternativa2
+    def get_alternativa2(self):
+        return self._alternativa2
+    def set_alternativa2(self, new_alternativa2):
+        self._alternativa2 = new_alternativa2
 
-    #encapsulamento alt3
-    def get_alt3(self):
-        return self._alt3
-    def set_alt3(self, new_alt3):
-        self._alt3 = new_alt3
+    #encapsulamento alternativa3
+    def get_alternativa3(self):
+        return self._alternativa3
+    def set_alternativa3(self, new_alternativa3):
+        self._alternativa3 = new_alternativa3
     
-    #encapsulamento alt4
-    def get_alt4(self):
-        return self._alt4
-    def set_alt4(self, new_alt4):
-        self._alt4 = new_alt4
+    #encapsulamento alternativa4
+    def get_alternativa4(self):
+        return self._alternativa4
+    def set_alternativa4(self, new_alternativa4):
+        self._alternativa4 = new_alternativa4
 
-    #encapsulamento resposta
-    def get_resposta(self):
-        return self._resposta
-    def set_resposta(self, new_resposta):
-        self._resposta = new_resposta
+    #encapsulamento resposta_pergunta
+    def get_resposta_pergunta(self):
+        return self._resposta_pergunta
+    def set_resposta_pergunta(self, new_resposta_pergunta):
+        self._resposta_pergunta = new_resposta_pergunta
 
-    #encapsulamento idtipopergunta
-    def get_idtipopergunta(self):
-        return self._idtipopergunta
-    
-    #encapsulamento idquestionario
-    def get_idquestionario(self):
-        return self._idquestionario
-    
+    #encapsulamento id_tipo_pergunta
+    def get_id_tipo_pergunta(self):
+        return self._id_tipo_pergunta
