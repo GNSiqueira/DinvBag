@@ -1,7 +1,7 @@
 from app.models.usuarioModel import Usuario
 from app.dao import usuarioDAO
 from flask import request, render_template
-from app.controllers.rotas import app
+from app.rotas import app
 
 #metodo de cadastro
 def singup_form():

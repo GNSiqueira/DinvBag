@@ -4,7 +4,7 @@ from app.controllers import usuarioController, perguntaController
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template("index.html")
 
 @app.route('/logar')
 def logar():
