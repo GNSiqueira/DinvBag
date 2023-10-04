@@ -1,10 +1,11 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 from app import app
 from app.controllers import usuarioController, perguntaController
 
-@app.route('/')
+@app.route('/', methods=['GET'])
+@app.route('/index', methods=['GET'])
 def index():
-    return render_template("index.html")
+    return render_template("index.html", static = 'app/static/')
 
 @app.route('/logar')
 def logar():

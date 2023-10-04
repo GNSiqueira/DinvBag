@@ -1,18 +1,15 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE HTML>	
+
 <html>
 
 <head>
 	<title>Dinv bag</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
 	<noscript>
-		<link rel="stylesheet" href="../templates/assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="{{url_for('static', filename='css/noscript.css')}}">
+	</noscript>
 </head>
 
 <body class="is-preload">
@@ -48,50 +45,50 @@
 		<!-- One -->
 		<section id="one" class="wrapper style2 spotlights">
 			<section>
-				<a href="#" class="image"><img src="images/tesouro.jpg" alt="" data-position="center center" /></a>
+				<a href="#" class="image"><img src="{{url_for('static', filename='imagens/tesouro.jpg')}}" alt="" data-position="center center" /></a>
 				<div class="content">
 					<div class="inner">
 						<h2>Tesouro Selic</h2>
 						<p>Entre e saiba como funciona um investimento seguro.
 						</p>
 						<ul class="actions">
-							<li><a href="tesouro.html" class="button">Saiba mais!</a></li>
+							<li><a href="/tesouro" class="button">Saiba mais!</a></li>
 						</ul>
 					</div>
 				</div>
 			</section>
 			<section>
-				<a href="#" class="image"><img src="images/cdb.jpg" alt="" data-position="top center" /></a>
+				<a href="#" class="image"><img src="{{url_for('static', filename='imagens/cdb.jpg')}}" alt="" data-position="top center" /></a>
 				<div class="content">
 					<div class="inner">
 						<h2>CDB</h2>
 						<p>Entre e saiba como emprestar o seu dinheiro ao banco em troca de remuneração.</p>
 						<ul class="actions">
-							<li><a href="cbd.html" class="button">Saiba mais!</a></li>
+							<li><a href="/cbd" class="button">Saiba mais!</a></li>
 						</ul>
 					</div>
 				</div>
 			</section>
 			<section>
-				<a href="#" class="image"><img src="images/acoes.jpg" alt="" data-position="25% 25%" /></a>
+				<a href="#" class="image"><img src="{{url_for('static', filename='imagens/acoes.jpg')}}" alt="" data-position="25% 25%" /></a>
 				<div class="content">
 					<div class="inner">
 						<h2>Ações</h2>
 						<p>Entre e saiba o que são ações e como ganhar retorno com isso.</p>
 						<ul class="actions">
-							<li><a href="generic.html" class="button">Saiba mais!</a></li>
+							<li><a href="/generic" class="button">Saiba mais!</a></li>
 						</ul>
 					</div>
 				</div>
 			</section>
 			<section>
-				<a href="#" class="image"><img src="images/fundoPapel.jpg" alt="" data-position="25% 25%" /></a>
+				<a href="#" class="image"><img src="{{url_for('static', filename='imagens/fundoPapel.jpg')}}" alt="" data-position="25% 25%" /></a>
 				<div class="content">
 					<div class="inner">
 						<h2>Fundo Imobiliário</h2>
 						<p>Entre e saiba como funciona um empréstimo para uma imobiliária.</p>
 						<ul class="actions">
-							<li><a href="generic.html" class="button">Saiba mais!</a></li>
+							<li><a href="/generic" class="button">Saiba mais!</a></li>
 						</ul>
 					</div>
 				</div>
@@ -149,14 +146,14 @@
 	</footer>
 
 	<!-- Scripts -->
-	<script src="../templates/assets/js/jquery.min.js"></script>
-	<script src="../templates/assets/js/jquery.scrollex.min.js"></script>
-	<script src="../templates/assets/js/jquery.scrolly.min.js"></script>
-	<script src="../templates/assets/js/browser.min.js"></script>
-	<script src="../templates/assets/js/breakpoints.min.js"></script>
-	<script src="../templates/assets/js/util.js"></script>
-	<script src="../templates/assets/js/main.js"></script>
+	<script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/jquery.scrollex.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/jquery.scrolly.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/browser.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/breakpoints.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/util.js')}}"></script>
+	<script src="{{url_for('static', filename='js/main.js')}}"></script>
 
 </body>
 
-</html>
+</html> 
