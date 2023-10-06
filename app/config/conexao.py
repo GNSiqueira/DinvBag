@@ -4,7 +4,7 @@ class Conexao:
     def connect(self):
         try:
             conn = connect(
-                host="containers-us-west-108.railway.app",
+                host="postgresql://postgres:xw01F5KQ0vEbK3ubaUog@containers-us-west-108.railway.app:7671/railway",
                 port="7671",
                 database="railway",
                 user="postgres",
