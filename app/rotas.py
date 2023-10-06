@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_from_directory
+from flask import Flask, render_template, request
 from app import app
 from app.controllers import usuarioController, perguntaController
 
@@ -15,9 +15,9 @@ def cadastro():
 def login():
     return render_template('loginprincipal.html', static = 'app/static')
 
-@app.route('/cadastrar')
+@app.route('/cadastrar', methods=['POST'])
 def cadastrar():
-    resposta = usuarioController.cadastrar()
+    resposta = usuarioController.cadastra()
     return render_template('cadastro.html', static = 'app/static', resposta = resposta)
 
 @app.route('/conf_user')

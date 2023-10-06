@@ -4,8 +4,8 @@ from flask import request, render_template
 from app.rotas import app
 
 #metodo de cadastro
-@app.route('/cadastrar', methods=['POST'])
-def cadastrar():
+app.route('/cadastrar', methods=['POST'])
+def cadastra():
     nome = request.form['nome']
     email = request.form['email']
     senha = request.form['senha']
@@ -37,7 +37,7 @@ def login():
         return  'Usuario ou senha invalida'
     
 #metodo de listar
-@app.route('/listar', methods=['GET'])
+
 def read_usuario():
     usuarios = []
     results = usuarioDAO.read_usuario()
@@ -47,7 +47,7 @@ def read_usuario():
     return render_template('listar.html', usuarios=usuarios)
 
 #metodo de pegar codigo do usuario
-@app.route('/pegar_id', methods=['GET'])
+
 def __init__():
     usuarios = []
     results = usuarioDAO.read_usuario()
@@ -57,7 +57,7 @@ def __init__():
     return render_template('pegarid.html', usuarios = usuarios)
 
 #precessar o id
-@app.route('/processar', methods=['POST'])
+
 def processar():
     usuarios = []
     results = usuarioDAO.read_usuario()
@@ -68,7 +68,7 @@ def processar():
     # Faça algo com o ID selecionado, como armazená-lo em uma variável ou processá-lo
     return render_template('pegarid.html', id_selecionado = id_selecionado, usuarios = usuarios)
 
-@app.route('/confirma', methods=['GET'])
+
 def confirma_form():
     login = None
     nome = None
@@ -97,7 +97,7 @@ def confirma_form():
         resposta = 'Email não existente'
         return resposta 
     
-@app.route('/editar_login', methods=['GET'])
+
 def update_login_form():
     global id_sisten
     if id_sisten != None:
@@ -108,7 +108,7 @@ def update_login_form():
     else:
         return 'Confirmar usuario novamente, volte a pagina anterior!'
 
-@app.route('/editar_senha', methods=['GET'])
+
 def update_senha_form():
     global id_sisten
     if id_sisten != None:
@@ -119,7 +119,7 @@ def update_senha_form():
     else:
         return 'Confirmar usuario novamente, volte a pagina anterior!'
 
-@app.route('/editar_nome', methods=['GET'])
+
 def update_nome_form():
     global id_sisten
     if id_sisten != None:
@@ -130,7 +130,7 @@ def update_nome_form():
     else:
         return 'Confirmar usuario novamente, volte a pagina anterior!'
     
-@app.route('/deletar', methods=['GET'])
+
 def delet_form():
     nome = request.form['nome_delet']
     senha = request.form['senha_delet']
