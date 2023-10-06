@@ -15,6 +15,11 @@ def cadastro():
 def login():
     return render_template('loginprincipal.html', static = 'app/static')
 
+@app.route('/cadastrar')
+def cadastrar():
+    resposta = usuarioController.cadastrar()
+    return render_template('cadastro.html', static = 'app/static', resposta = resposta)
+
 @app.route('/conf_user')
 def conf_user():
     return render_template('editarUsuario.html')

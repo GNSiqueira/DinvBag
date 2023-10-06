@@ -4,15 +4,12 @@ from flask import request, render_template
 from app.rotas import app
 
 #metodo de cadastro
-def singup_form():
-    user = None
-    nome = None
-    login = None
-    senha = None
+@app.route('/cadastrar', methods=['POST'])
+def cadastrar():
     nome = request.form['nome']
-    login = request.form['login']
+    email = request.form['email']
     senha = request.form['senha']
-    if usuarioDAO.verificar_usuario_email(login) == login:
+    if usuarioDAO.verificar_usuario_email(email) == email:
         resposta = 'Email já cadastrado!'
         return resposta
     else:
@@ -20,8 +17,8 @@ def singup_form():
             resposta = 'Nome já cadastrado! Tente outro!'
             return resposta
         else:
-            user = Usuario(1, nome, login, senha, 'Inicio')
-            inform = [user.get_nomeusuario(), user.get_login(), user.get_senha(), user.get_progresso()]
+            user = Usuario(1, nome, email, senha, 'Inicio')
+            inform = [user.get_nome_usuario(), user.get_email_usuario(), user.get_senha_usuario(), user.get_progresso_usuario()]
             resposta = usuarioDAO.create_usuario(inform)
             return resposta
         
