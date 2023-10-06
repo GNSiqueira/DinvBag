@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="logincadastrar.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/logincadastrar.css')}}">
   <title>Tela de Login</title>
   
 </head>
@@ -11,13 +11,13 @@
   <div class="login-container">
     <h2>Tela de cadastro</h2>
     <form action="#">
-      <input type="email" placeholder="email" required>
+      <input type="email" placeholder="E-mail" required>
       <input type="text" placeholder="Usuário" required>
       <input type="password" placeholder="Senha" required>
       <button type="submit"> <strong>E N T R A R</strong></button>
     </form>
     <div class="options">
-      <a href="loginprincipal.html" id="signup-link">Fazer Login</a>
+      <a href="/login" id="signup-link">Fazer Login</a>
      
     </div>
   </div>

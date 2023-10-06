@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="loginprincipal.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/loginprincipal.css')}}">
   <title>Tela de Login</title>
   
 </head>
@@ -16,9 +16,9 @@
       <button type="submit"><strong>E N T R A R</strong></button>
     </form>
     <div class="options">
-      <a href="logincadastrar.html" id="signup-link">Cadastrar novo usuário</a>
+      <a href="/cadastro" id="signup-link">Cadastrar novo usuário</a>
       <span>ou</span>
-      <a href="../index.html" id="signup-link">Entrar sem conta</a>
+      <a href="/" id="signup-link">Entrar sem conta</a>
     </div>
   </div>
   

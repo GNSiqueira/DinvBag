@@ -7,9 +7,13 @@ from app.controllers import usuarioController, perguntaController
 def index():
     return render_template("index.html", static = 'app/static/')
 
-@app.route('/logar')
-def logar():
-    return render_template('login.html')
+@app.route('/cadastro')
+def cadastro():
+    return render_template('cadastro.html', static = 'app/static')
+
+@app.route('/login')
+def login():
+    return render_template('loginprincipal.html', static = 'app/static')
 
 @app.route('/conf_user')
 def conf_user():
@@ -18,16 +22,6 @@ def conf_user():
 @app.route('/delet')
 def delet():
     return render_template('deletar.html')
-
-@app.route('/singup', methods=['POST'])
-def singup():
-    resposta = usuarioController.singup_form()
-    return render_template('index.html', resposta = resposta)
-
-@app.route('/login', methods=['POST'])
-def login():
-    resposta = usuarioController.login()
-    return render_template('login.html', resposta=resposta)
 
 @app.route('/confirma', methods=['POST'])
 def confirma():
