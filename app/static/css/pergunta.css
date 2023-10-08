@@ -19,7 +19,12 @@ body {
     padding: 40px;
     width: 1550px;
     height: 580px;
-    max-width: 80%;
+    max-width: 80%; /* Mantenha esta propriedade para controlar a largura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; 
     animation: moveAndOscillate 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
     
   }
@@ -32,7 +37,12 @@ body {
     padding: 40px;
     width: 1550px;
     height: 580px;
-    max-width: 80%;
+    max-width: 80%; /* Mantenha esta propriedade para controlar a largura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
     animation: moveAndOscillate 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   }
 
@@ -72,4 +82,3 @@ p{
     font-size: 1.25em;
 
 }
-
