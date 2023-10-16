@@ -4,11 +4,11 @@ class Conexao:
     def connect(self):
         try:
             conn = connect(
-            host = "containers-us-west-108.railway.app",
-            port = "7671",
-            database = "railway",
+            host = "localhost",
+            port = "5432",
+            database = "DinvBag",
             user = "postgres",
-            password = "xw01F5KQ0vEbK3ubaUog"
+            password = "123456"
             )
             return conn
         
