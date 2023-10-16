@@ -1,6 +1,5 @@
 from psycopg2 import Error
 from app.config.conexao import Conexao
-from app.models import questionarioModel
 
 #cria um metodo de cadastrar questionario
 def create_questionario(estagio, acertos, id_usuario):
