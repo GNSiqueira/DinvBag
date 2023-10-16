@@ -1,6 +1,5 @@
 from psycopg2 import Error 
 from app.config.conexao import Conexao
-from app.models import perguntaModel
 
 #cria um metodo de cadastro questionario
 def create_pergunta(textopergunta, alt1, alt2, alt3, alt4, resposta, idtipopergunta):

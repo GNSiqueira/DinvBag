@@ -1,7 +1,4 @@
 from psycopg2 import Error
-from sys import path
-import os
-path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from app.config.conexao import Conexao
 
 #metodo de cadastro de usuario
