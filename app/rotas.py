@@ -20,6 +20,11 @@ def cadastrar():
     resposta = usuarioController.cadastra()
     return render_template('cadastro.html', static = 'app/static', resposta = resposta)
 
+@app.route('/logar', methods=['POST'])
+def logar():
+    resposta = usuarioController.loga()
+    return render_template('loginprincipal.html', static = 'app/static', resposta = resposta)
+
 @app.route('/conf_user')
 def conf_user():
     return render_template('editarUsuario.html')
@@ -36,7 +41,7 @@ def confirma():
     else:
         resposta = usuarioController.confirma_form()
         return render_template('editarUsuario.html', resposta = resposta)
-    
+
 @app.route('/editar_login', methods=['POST'])
 def update_login():
     resposta = usuarioController.update_login_form()
