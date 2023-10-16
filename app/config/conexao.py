@@ -1,5 +1,4 @@
 from psycopg2 import connect, Error
-import psycopg2
 
 class Conexao:
     def connect(self):
