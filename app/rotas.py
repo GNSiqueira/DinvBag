@@ -24,6 +24,12 @@ def cadastrar():
 def logar():
     resposta = usuarioController.loga()
     return render_template('loginprincipal.html', static = 'app/static', resposta = resposta)
+@app.route('/tesouro')
+def tesouro():
+    return render_template('tesouro.html', static = 'app/static')
+@app.route('/questionariotesouro')
+def questionariotesouro():
+    return render_template('questionariotesouro.html', static = 'app/static')
 
 @app.route('/conf_user')
 def conf_user():
