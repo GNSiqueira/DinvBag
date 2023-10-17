@@ -1,5 +1,4 @@
 from psycopg2 import connect, Error
-import psycopg2
 
 class Conexao:
     def connect(self):
@@ -23,5 +22,4 @@ class Conexao:
                 return("Conexão fechada com sucesso!")
         except (Exception, Error) as error:
             return("Erro ao fechar conexão:", error)
-
 
