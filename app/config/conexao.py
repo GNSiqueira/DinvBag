@@ -9,6 +9,11 @@ class Conexao:
             database = "railway",
             user = "postgres",
             password = "xw01F5KQ0vEbK3ubaUog"
+            #host = "localhost",
+            #port = "5432",
+            #database = "DinvBag",
+            #user = "postgres",
+            #password = "123456"
             )
             return conn
         
