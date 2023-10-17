@@ -4,11 +4,11 @@ class Conexao:
     def connect(self):
         try:
             conn = connect(
-            host = "localhost",
-            port = "5432",
-            database = "DinvBag",
+            host = "containers-us-west-108.railway.app",
+            port = "7671",
+            database = "railway",
             user = "postgres",
-            password = "123456"
+            password = "xw01F5KQ0vEbK3ubaUog"
             )
             return conn
         
@@ -22,5 +22,4 @@ class Conexao:
                 return("Conexão fechada com sucesso!")
         except (Exception, Error) as error:
             return("Erro ao fechar conexão:", error)
-
 
