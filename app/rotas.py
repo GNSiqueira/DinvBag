@@ -15,21 +15,10 @@ def cadastro():
 def login():
     return render_template('loginprincipal.html', static = 'app/static')
 
-@app.route('/cadastrar', methods=['POST'])
-def cadastrar():
-    resposta = usuarioController.cadastra()
-    return render_template('cadastro.html', static = 'app/static', resposta = resposta)
 
-@app.route('/logar', methods=['POST'])
-def logar():
-    resposta = usuarioController.loga()
-    return render_template('loginprincipal.html', static = 'app/static', resposta = resposta)
 @app.route('/tesouro')
 def tesouro():
     return render_template('tesouro.html', static = 'app/static')
-@app.route('/questionariotesouro')
-def questionariotesouro():
-    return render_template('questionariotesouro.html', static = 'app/static')
 
 @app.route('/acoes')
 def acoes():
@@ -46,3 +35,18 @@ def elements():
 @app.route('/fundo')
 def fundo():
     return render_template('fundo.html', static = 'app/static')
+
+@app.route('/cadastrar', methods=['POST'])
+def cadastrar():
+    resposta = usuarioController.cadastra()
+    return render_template('cadastro.html', static = 'app/static', resposta = resposta)
+
+@app.route('/logar', methods=['POST'])
+def logar():
+    resposta = usuarioController.loga()
+    return render_template('loginprincipal.html', static = 'app/static', resposta = resposta)
+
+@app.route('/questionario')
+def questionariotesouro():
+    retorno = perguntaController.carregar_questionario_tesouro()
+    return render_template('questionario.html', static = 'app/static', dados = retorno)
