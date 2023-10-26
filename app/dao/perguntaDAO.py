@@ -158,4 +158,33 @@ def delete_pergunta(idpergunta):
         cursor.close()
         conexao.close_connection(conn)
         
-    
+def contar_perguntas(tipo):
+    conexao = Conexao()
+    conn = conexao.connect()
+    try:
+        cursor = conn.cursor()
+        query = ("select count(p.id_pergunta) from pergunta p inner join tipo_pergunta t on t.id_tipo_pergunta = p.id_tipo_pergunta where tipo_pergunta = '{}'".format(tipo))
+        cursor.execute(query)
+        result = cursor.fetchall()
+        return result[0][0]
+    except(Exception, Error) as error:
+        return('Erro no codigo do banco: ', error)
+    finally:
+        cursor.close()
+        conexao.close_connection(conn)
+
+def selecionar_perguntas(tipo):
+    conexao = Conexao()
+    conn = conexao.connect()
+    try:
+        cursor = conn.cursor()
+        query = ("select p.* from pergunta p inner join tipo_pergunta t on t.id_tipo_pergunta = p.id_tipo_pergunta where tipo_pergunta = '{}';".format(tipo))
+        cursor.execute(query)
+        results = cursor.fetchall()
+        conn.commit()
+        return results
+    except(Exception, Error) as error:
+        return('Erro no codigo do banco: ', error)
+    finally:
+        cursor.close()
+        conexao.close_connection(conn)
