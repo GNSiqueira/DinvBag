@@ -1,14 +1,7 @@
-from app.models.tipoperguntaModel import TipoPergunta
-from app.dao import perguntaDAO, tipoPerguntaDAO
+from app.models.perguntaModel import Pergunta
+from app.dao import perguntaDAO
 from flask import request
-
-def carregar_tipo():
-    tipoperguntas = []
-    results = tipoPerguntaDAO.read_tipo_pergunta()
-    for result in results:
-        tipopergunta = TipoPergunta(result[0], result[1], result[2])
-        tipoperguntas.append(tipopergunta)
-    return  tipoperguntas 
+from random import sample
 
 def cadastrar_pergunta():
     textopergunta = request.form['textopergunta']
@@ -23,3 +16,24 @@ def cadastrar_pergunta():
     resposta = perguntaDAO.create_pergunta(textopergunta, alt1, alt2, alt3, alt4, resposta, idtipopergunta, idquestionario)
 
     return resposta
+
+def carregar_questionario_tesouro():
+    retorno = {
+        'tipo_questionario': 'TESOURO SELIC'
+    }
+    
+    pergunta = 0
+    
+    tipo = 'Tesouro Selic'
+    contagem = perguntaDAO.contar_perguntas(tipo)
+    aleatorio = sample(range(contagem), 5)
+    for c in range(0, 5):
+        cccc = 2
+        resp = perguntaDAO.selecionar_perguntas(tipo)[aleatorio[c]]
+        pergunta +=1
+        retorno['texto_questionario{}'.format(pergunta)] = resp[1]
+        
+        for cc in range(1, 6):
+            retorno['alter{}_p{}'.format(cc, pergunta)] = resp[cccc]
+            cccc+=1
+    return retorno
