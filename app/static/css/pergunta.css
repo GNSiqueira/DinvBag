@@ -71,6 +71,9 @@ body {
     background-color: #45a049;
     transform: scale(1.05);
   }
+ .pressed{
+    background-color: #45a049;
+  }
   h1 {
     font-size: 2.75em;
     display: flex;
