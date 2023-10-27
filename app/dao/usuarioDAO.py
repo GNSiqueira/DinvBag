@@ -1,7 +1,4 @@
 from psycopg2 import Error
-from sys import path
-import os
-path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from app.config.conexao import Conexao
 
 #metodo de cadastro de usuario
@@ -43,14 +40,14 @@ def verificar_usuario_email(inform):
     finally:
         cursor.close()
         conexao.close_connection(conn)
-
+    
 #metodo para checar se o usuario(nome) já existe
 def verificar_usuario_nome(inform):
     conexao = Conexao()
     conn = conexao.connect()
     try:
         cursor = conn.cursor()
-        cursor.execute("SELECT nome_usuario FROM usuario WHERE email_usuario = '{}'".format(inform))
+        cursor.execute("SELECT nome_usuario FROM usuario WHERE nome_usuario = '{}'".format(inform))
         result = cursor.fetchall()
 
         return result[0][0]
@@ -70,7 +67,7 @@ def verificar_usuario_senha(inform):
     conn = conexao.connect()
     try:
         cursor = conn.cursor()
-        cursor.execute("select senhar_usuario from usuario where email_usuario = '{}'".format(inform))
+        cursor.execute("select senha_usuario from usuario where email_usuario = '{}'".format(inform))
         result = cursor.fetchall()
 
         return result[0][0]

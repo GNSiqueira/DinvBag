@@ -15,16 +15,40 @@ def cadastro():
 def login():
     return render_template('loginprincipal.html', static = 'app/static')
 
+
+@app.route('/tesouro')
+def tesouro():
+    return render_template('tesouro.html', static = 'app/static')
+
+@app.route('/acoes')
+def acoes():
+    return render_template('acoes.html', static = 'app/static')
+
+@app.route('/cbd')
+def cbd():
+    return render_template('cbd.html', static = 'app/static')
+
+@app.route('/elements')
+def elements():
+    return render_template('elements.html', static = 'app/static')
+
+@app.route('/fundo')
+def fundo():
+    return render_template('fundo.html', static = 'app/static')
+
 @app.route('/cadastrar', methods=['POST'])
 def cadastrar():
     resposta = usuarioController.cadastra()
     return render_template('cadastro.html', static = 'app/static', resposta = resposta)
 
-@app.route('/tesouro')
-def tesouro():
-    return render_template('tesouro.html', static = 'app/static')
-@app.route('/questionariotesouro')
+@app.route('/logar', methods=['POST'])
+def logar():
+    resposta = usuarioController.loga()
+    return render_template('loginprincipal.html', static = 'app/static', resposta = resposta)
+
+@app.route('/questionario')
 def questionariotesouro():
+<<<<<<< HEAD
     return render_template('questionariotesouro.html', static = 'app/static')
 @app.route('/simulacao')
 def simulacao():
@@ -77,3 +101,7 @@ def cadastrar_pergunta_entrar():
 def cadastrar_pergunta():
     resposta = perguntaController.cadastrar_pergunta()
     return render_template('cadastrarpergunta.html', resposta = resposta)
+=======
+    retorno = perguntaController.carregar_questionario_tesouro()
+    return render_template('questionario.html', static = 'app/static', dados = retorno)
+>>>>>>> origin

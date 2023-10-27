@@ -4,16 +4,17 @@ from flask import request, render_template
 from app.rotas import app
 
 #metodo de cadastro
-app.route('/cadastrar', methods=['POST'])
 def cadastra():
     nome = request.form['nome']
     email = request.form['email']
     senha = request.form['senha']
-    if usuarioDAO.verificar_usuario_email(email) == email:
+    email_1 = usuarioDAO.verificar_usuario_email(email) 
+    nome_1 = usuarioDAO.verificar_usuario_nome(nome)
+    if email_1 == email:
         resposta = 'Email já cadastrado!'
         return resposta
     else:
-        if usuarioDAO.verificar_usuario_nome(nome) == nome:
+        if nome_1 == nome:
             resposta = 'Nome já cadastrado! Tente outro!'
             return resposta
         else:
@@ -22,22 +23,24 @@ def cadastra():
             resposta = usuarioDAO.create_usuario(inform)
             return resposta
         
-#method de login          
-def login():
-    login = None
-    senha = None
-    login = request.form['email']
+#método de login      
+def loga():
+    login = request.form['login']
     senha = request.form['senha']
-    if usuarioDAO.verificar_usuario_email(login) == login:
-        if usuarioDAO.verificar_usuario_senha(login) == senha:
-            return 'Usuario entra'
+    login_1 = usuarioDAO.verificar_usuario_email(login)
+    senha_1 = usuarioDAO.verificar_usuario_senha(login) 
+    if login_1 == login:
+        if senha_1 == senha:
+            resposta = 'Usuario entra'
+            return resposta
         else:
-            return  'Usuario ou senha invalida'
+            resposta = 'Usuario ou senha invalida'
+            return resposta
     else:
-        return  'Usuario ou senha invalida'
+        resposta = 'Usuario ou senha invalida'
+        return  resposta
     
 #metodo de listar
-
 def read_usuario():
     usuarios = []
     results = usuarioDAO.read_usuario()
@@ -47,7 +50,6 @@ def read_usuario():
     return render_template('listar.html', usuarios=usuarios)
 
 #metodo de pegar codigo do usuario
-
 def __init__():
     usuarios = []
     results = usuarioDAO.read_usuario()
@@ -57,7 +59,6 @@ def __init__():
     return render_template('pegarid.html', usuarios = usuarios)
 
 #precessar o id
-
 def processar():
     usuarios = []
     results = usuarioDAO.read_usuario()

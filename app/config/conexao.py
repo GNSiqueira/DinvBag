@@ -1,5 +1,4 @@
 from psycopg2 import connect, Error
-import psycopg2
 
 class Conexao:
     def connect(self):
@@ -10,6 +9,11 @@ class Conexao:
             database = "railway",
             user = "postgres",
             password = "xw01F5KQ0vEbK3ubaUog"
+            #host = "localhost",
+            #port = "5432",
+            #database = "DinvBag",
+            #user = "postgres",
+            #password = "123456"
             )
             return conn
         
@@ -23,5 +27,4 @@ class Conexao:
                 return("Conexão fechada com sucesso!")
         except (Exception, Error) as error:
             return("Erro ao fechar conexão:", error)
-
 
