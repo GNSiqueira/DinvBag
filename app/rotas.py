@@ -26,6 +26,10 @@ def tesouro():
 @app.route('/questionariotesouro')
 def questionariotesouro():
     return render_template('questionariotesouro.html', static = 'app/static')
+@app.route('/simulacao')
+def simulacao():
+    return render_template('simulacao.html', static = 'app/static')
+
 
 @app.route('/conf_user')
 def conf_user():
