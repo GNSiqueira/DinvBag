@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/pergunta.css')}}">
+</head>
+<body>
+<div class="pergunta-container" >
+    <h1 ><strong> </strong>RESULTADO DO QUESTIONARIO{{ dados.tipo_questionario }}</strong></h1>
+    <h2><strong> </strong>Pergunta 01</strong></h2>
+    <p> {{ dados.texto_questionario1 }} </p>
+    <br>
+    <button type="submit" disabled class="ignorar"style="background-color: green;" value="alter1"> <strong> {{ dados.alter1_p1 }} </strong></button>
+    <br>  
+    <br>
+    <button type="submit" disabled class="ignorar" style="background-color: red;" value="alter2"> <strong> {{ dados.alter2_p1 }} </strong></button>
+    <br> 
+    <br>
+    <button type="submit" disabled class="ignorar"  value="alter3"> <strong> {{ dados.alter3_p1 }} </strong></button>
+    <br> 
+    <br>
+    <button type="submit" disabled class="ignorar"  value="alter4"> <strong> {{ dados.alter4_p1 }} </strong></button>
+    <br>   
+</div>
+
+<div class="pergunta-container" >
+    <h2><strong> </strong>Pergunta 02</strong></h2>
+    <p> {{ dados.texto_questionario2 }} </p>
+    <br>
+    <button type="submit" disabled class="ignorar" style="background-color: green;" value="alter1"> <strong> {{ dados.alter1_p2 }} </strong></button>
+    <br>  
+    <br>
+    <button type="submit" disabled class="ignorar" style="background-color: red;" value="alter2"> <strong> {{ dados.alter2_p2 }} </strong></button>
+    <br> 
+    <br>
+    <button type="submit" disabled class="ignorar"  value="alter3"> <strong> {{ dados.alter3_p2 }} </strong></button>
+    <br> 
+    <br>
+    <button type="submit" disabled class="ignorar"  value="alter4"> <strong> {{ dados.alter4_p2 }} </strong></button>
+    <br>   
+</div>
+    
+<div class="pergunta-container" >
+    <h2><strong> </strong>Pergunta 03</strong></h2>
+    <p> {{ dados.texto_questionario3 }} </p>
+    <br>
+    <button type="submit" disabled class="ignorar" style="background-color: green;" value="alter1"> <strong> {{ dados.alter1_p3 }} </strong></button>
+    <br>  
+    <br>
+    <button type="submit" disabled class="ignorar" style="background-color: red;" value="alter2"> <strong> {{ dados.alter2_p3 }} </strong></button>
+    <br> 
+    <br>
+    <button type="submit" disabled class="ignorar"  value="alter3"> <strong> {{ dados.alter3_p3 }} </strong></button>
+    <br> 
+    <br>
+    <button type="submit" disabled class="ignorar"  value="alter4"> <strong> {{ dados.alter4_p3 }} </strong></button>
+    <br>   
+</div>
+
+<div class="pergunta-container" >
+    <h2><strong> </strong>Pergunta 04</strong></h2>
+    <p> {{ dados.texto_questionario4 }} </p>
+    <br>
+    <button type="submit" disabled class="ignorar" style="background-color: green;" value="alter1"> <strong> {{ dados.alter1_p4 }} </strong></button>
+    <br>  
+    <br>
+    <button type="submit" disabled class="ignorar" style="background-color: red;" value="alter2"> <strong> {{ dados.alter2_p4 }} </strong></button>
+    <br> 
+    <br>
+    <button type="submit" disabled class="ignorar"  value="alter3"> <strong> {{ dados.alter3_p4 }} </strong></button>
+    <br> 
+    <br>
+    <button type="submit" disabled class="ignorar"  value="alter4"> <strong> {{ dados.alter4_p4 }} </strong></button>
+    <br>   
+</div>
+    
+<div class="pergunta-container" >
+    <h2><strong> </strong>Pergunta 05</strong></h2>
+    <p> {{ dados.texto_questionario5 }} </p>
+    <br>
+    <button type="submit" disabled class="ignorar" style="background-color: green;" value="alter1"> <strong> {{ dados.alter1_p5 }} </strong></button>
+    <br>  
+    <br>
+    <button type="submit" disabled class="ignorar" style="background-color: red;" value="alter2"> <strong> {{ dados.alter2_p5 }} </strong></button>
+    <br> 
+    <br>
+    <button type="submit" disabled class="ignorar"  value="alter3"> <strong> {{ dados.alter3_p5 }} </strong></button>
+    <br> 
+    <br>
+    <button type="submit" disabled class="ignorar"  value="alter4"> <strong> {{ dados.alter4_p5 }} </strong></button>
+    <br>   
+</div>
+</body>
+</html>
+</body>
+</html>
