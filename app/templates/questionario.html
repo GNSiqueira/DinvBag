@@ -3,110 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Questionario - DinvBag</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/pergunta.css')}}">
+    <link rel="icon" href="{{url_for('static', filename='imagens/icone.jpg')}}">
+
 </head>
 <body>
-<div class="pergunta-container" >
-    <h1 ><strong> </strong>QUESTIONARIO {{ dados.tipo_questionario }}</strong></h1>
-    <h2><strong> </strong>Pergunta 01</strong></h2>
-    <p> {{ dados.texto_questionario1 }} </p>
-    <br>
-    <button type="submit" class="alter-button"  value="alter1"> <strong> {{ dados.alter1_p1 }} </strong></button>
-    <br>  
-    <br>
-    <button type="submit" class="alter-button"  value="alter2"> <strong> {{ dados.alter2_p1 }} </strong></button>
-    <br> 
-    <br>
-    <button type="submit" class="alter-button"  value="alter3"> <strong> {{ dados.alter3_p1 }} </strong></button>
-    <br> 
-    <br>
-    <button type="submit" class="alter-button"  value="alter4"> <strong> {{ dados.alter4_p1 }} </strong></button>
-    <br>   
-</div>
-
-<div class="pergunta-container" >
-    <h2><strong> </strong>Pergunta 02</strong></h2>
-    <p> {{ dados.texto_questionario2 }} </p>
-    <br>
-    <button type="submit" class="alter-button"  value="alter1"> <strong> {{ dados.alter1_p2 }} </strong></button>
-    <br>  
-    <br>
-    <button type="submit" class="alter-button"  value="alter2"> <strong> {{ dados.alter2_p2 }} </strong></button>
-    <br> 
-    <br>
-    <button type="submit" class="alter-button"  value="alter3"> <strong> {{ dados.alter3_p2 }} </strong></button>
-    <br> 
-    <br>
-    <button type="submit" class="alter-button"  value="alter4"> <strong> {{ dados.alter4_p2 }} </strong></button>
-    <br>   
-</div>
+  <div class="pergunta-container" >
+      <h1 ><strong> </strong>QUESTIONARIO {{ dados.tipo_questionario }}</strong></h1>
+      <h2><strong> </strong>Pergunta 01</strong></h2>
+      <p> {{ dados.texto_questionario1 }} </p>
+      <br>
+      <button type="submit" class="alter-button" class="alter1"  value="alter1"> <strong> {{ dados.alter1_p1 }} </strong></button>
+      <br>  
+      <br>
+      <button type="submit" class="alter-button"  value="alter2"> <strong> {{ dados.alter2_p1 }} </strong></button>
+      <br> 
+      <br>
+      <button type="submit" class="alter-button"  value="alter3"> <strong> {{ dados.alter3_p1 }} </strong></button>
+      <br> 
+      <br>
+      <button type="submit" class="alter-button"  value="alter4"> <strong> {{ dados.alter4_p1 }} </strong></button>
+      <br>   
+  </div>
+  
+  <div class="pergunta-container" >
+      <h2><strong> </strong>Pergunta 02</strong></h2>
+      <p> {{ dados.texto_questionario2 }} </p>
+      <br>
+      <button type="submit" class="alter-button"  value="alter1"> <strong> {{ dados.alter1_p2 }} </strong></button>
+      <br>  
+      <br>
+      <button type="submit" class="alter-button"  value="alter2"> <strong> {{ dados.alter2_p2 }} </strong></button>
+      <br> 
+      <br>
+      <button type="submit" class="alter-button"  value="alter3"> <strong> {{ dados.alter3_p2 }} </strong></button>
+      <br> 
+      <br>
+      <button type="submit" class="alter-button"  value="alter4"> <strong> {{ dados.alter4_p2 }} </strong></button>
+      <br>   
+  </div>
+      
+  <div class="pergunta-container" >
+      <h2><strong> </strong>Pergunta 03</strong></h2>
+      <p> {{ dados.texto_questionario3 }} </p>
+      <br>
+      <button type="submit" class="alter-button"  value="alter1"> <strong> {{ dados.alter1_p3 }} </strong></button>
+      <br>  
+      <br>
+      <button type="submit" class="alter-button"  value="alter2"> <strong> {{ dados.alter2_p3 }} </strong></button>
+      <br> 
+      <br>
+      <button type="submit" class="alter-button"  value="alter3"> <strong> {{ dados.alter3_p3 }} </strong></button>
+      <br> 
+      <br>
+      <button type="submit" class="alter-button"  value="alter4"> <strong> {{ dados.alter4_p3 }} </strong></button>
+      <br>   
+  </div>
+  
+  <div class="pergunta-container" >
+      <h2><strong> </strong>Pergunta 04</strong></h2>
+      <p> {{ dados.texto_questionario4 }} </p>
+      <br>
+      <button type="submit" class="alter-button"  value="alter1"> <strong> {{ dados.alter1_p4 }} </strong></button>
+      <br>  
+      <br>
+      <button type="submit" class="alter-button"  value="alter2"> <strong> {{ dados.alter2_p4 }} </strong></button>
+      <br> 
+      <br>
+      <button type="submit" class="alter-button"  value="alter3"> <strong> {{ dados.alter3_p4 }} </strong></button>
+      <br> 
+      <br>
+      <button type="submit" class="alter-button"  value="alter4"> <strong> {{ dados.alter4_p4 }} </strong></button>
+      <br>   
+  </div>
+      
+  <div class="pergunta-container" >
+      <h2><strong> </strong>Pergunta 05</strong></h2>
+      <p> {{ dados.texto_questionario5 }} </p>
+      <br>
+      <button type="submit" class="alter-button"  value="alter1"> <strong> {{ dados.alter1_p5 }} </strong></button>
+      <br>  
+      <br>
+      <button type="submit" class="alter-button"  value="alter2"> <strong> {{ dados.alter2_p5 }} </strong></button>
+      <br> 
+      <br>
+      <button type="submit" class="alter-button"  value="alter3"> <strong> {{ dados.alter3_p5 }} </strong></button>
+      <br> 
+      <br>
+      <button type="submit" class="alter-button"  value="alter4"> <strong> {{ dados.alter4_p5 }} </strong></button>
+      <br>   
+      <button id="enviarRespostas" class="Enviar">Enviar Respostas</button>
+  </div>
+  <br>
+  
+  <!--Parte de confirmação do usuário-->
+  <div id="custom-confirm" class="modal">
+      <div class="modal-content">
+        <p>Tem certeza de que deseja enviar as respostas?</p>
+        <button id="confirm-yes" onclick="location.href='verRespostas.html'">Sim</button>
+        <button id="confirm-no">Não</button>
+      </div>
+    </div>
     
-<div class="pergunta-container" >
-    <h2><strong> </strong>Pergunta 03</strong></h2>
-    <p> {{ dados.texto_questionario3 }} </p>
-    <br>
-    <button type="submit" class="alter-button"  value="alter1"> <strong> {{ dados.alter1_p3 }} </strong></button>
-    <br>  
-    <br>
-    <button type="submit" class="alter-button"  value="alter2"> <strong> {{ dados.alter2_p3 }} </strong></button>
-    <br> 
-    <br>
-    <button type="submit" class="alter-button"  value="alter3"> <strong> {{ dados.alter3_p3 }} </strong></button>
-    <br> 
-    <br>
-    <button type="submit" class="alter-button"  value="alter4"> <strong> {{ dados.alter4_p3 }} </strong></button>
-    <br>   
-</div>
-
-<div class="pergunta-container" >
-    <h2><strong> </strong>Pergunta 04</strong></h2>
-    <p> {{ dados.texto_questionario4 }} </p>
-    <br>
-    <button type="submit" class="alter-button"  value="alter1"> <strong> {{ dados.alter1_p4 }} </strong></button>
-    <br>  
-    <br>
-    <button type="submit" class="alter-button"  value="alter2"> <strong> {{ dados.alter2_p4 }} </strong></button>
-    <br> 
-    <br>
-    <button type="submit" class="alter-button"  value="alter3"> <strong> {{ dados.alter3_p4 }} </strong></button>
-    <br> 
-    <br>
-    <button type="submit" class="alter-button"  value="alter4"> <strong> {{ dados.alter4_p4 }} </strong></button>
-    <br>   
-</div>
+   
     
-<div class="pergunta-container" >
-    <h2><strong> </strong>Pergunta 05</strong></h2>
-    <p> {{ dados.texto_questionario5 }} </p>
-    <br>
-    <button type="submit" class="alter-button"  value="alter1"> <strong> {{ dados.alter1_p5 }} </strong></button>
-    <br>  
-    <br>
-    <button type="submit" class="alter-button"  value="alter2"> <strong> {{ dados.alter2_p5 }} </strong></button>
-    <br> 
-    <br>
-    <button type="submit" class="alter-button"  value="alter3"> <strong> {{ dados.alter3_p5 }} </strong></button>
-    <br> 
-    <br>
-    <button type="submit" class="alter-button"  value="alter4"> <strong> {{ dados.alter4_p5 }} </strong></button>
-    <br>   
-</div>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-  const alterButtons = document.querySelectorAll(".alter-button");
-
-  alterButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const parentDiv = button.closest(".pergunta-container");
-      parentDiv.querySelectorAll(".alter-button").forEach((btn) => btn.classList.remove("pressed"));
-      button.classList.add("pressed");
+        
+  
+  
+  <script>
+      //Botoes mudando de cor ao ser clicados
+    document.addEventListener("DOMContentLoaded", () => {
+    const alterButtons = document.querySelectorAll(".alter-button");
+  
+    alterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const parentDiv = button.closest(".pergunta-container");
+        parentDiv.querySelectorAll(".alter-button").forEach((btn) => btn.classList.remove("pressed"));
+        button.classList.add("pressed");
+      });
     });
   });
-});
-
-
-
-</script>
+  // Evento de confirmação do usuario para enviar ou não as respostas
+  
+      document.getElementById("enviarRespostas").addEventListener("click", function() {
+        document.getElementById("custom-confirm").style.display = "flex";
+      });
+      document.getElementById("enviarRespostas").addEventListener("click", function() {
+        document.getElementById("custom-confirm").style.visibility = "visible";
+      });
+  
+      document.getElementById("confirm-yes").addEventListener("click", function() {
+        document.getElementById("custom-confirm").style.display = "none";
+      });
+  
+      document.getElementById("confirm-no").addEventListener("click", function() {
+        document.getElementById("custom-confirm").style.display = "none";
+      });
+  
+  
+  
+  </script>
 </body>
 </html>

@@ -47,9 +47,8 @@ def logar():
     return render_template('loginprincipal.html', static = 'app/static', resposta = resposta)
 
 @app.route('/questionario')
-def questionariotesouro():
-<<<<<<< HEAD
-    return render_template('questionariotesouro.html', static = 'app/static')
+def questionario():
+    return render_template('questionario.html', static = 'app/static')
 @app.route('/simulacao')
 def simulacao():
     return render_template('simulacao.html', static = 'app/static')
@@ -101,7 +100,3 @@ def cadastrar_pergunta_entrar():
 def cadastrar_pergunta():
     resposta = perguntaController.cadastrar_pergunta()
     return render_template('cadastrarpergunta.html', resposta = resposta)
-=======
-    retorno = perguntaController.carregar_questionario_tesouro()
-    return render_template('questionario.html', static = 'app/static', dados = retorno)
->>>>>>> origin
