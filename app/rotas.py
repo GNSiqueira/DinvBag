@@ -47,8 +47,9 @@ def logar():
     return render_template('loginprincipal.html', static = 'app/static', resposta = resposta)
 
 @app.route('/questionario')
-def questionario():
-    return render_template('questionario.html', static = 'app/static')
+def questionariotesouro():
+    retorno = perguntaController.carregar_questionario_tesouro()
+    return render_template('questionario.html', static = 'app/static', dados = retorno)
 @app.route('/simulacao')
 def simulacao():
     return render_template('simulacao.html', static = 'app/static')
