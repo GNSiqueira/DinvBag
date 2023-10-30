@@ -3296,7 +3296,7 @@
 
 		#header > .title {
 			border: 0;
-			color: #ffffff;
+			color: #383232;
 			display: block;
 			font-size: 1.25em;
 			font-weight: bold;
@@ -3328,7 +3328,7 @@
 
 					#header > nav > ul > li a {
 						border: 0;
-						color: rgba(255, 255, 255, 0.35);
+						color: rgba(59, 50, 50, 0.973);
 						display: inline-block;
 						font-size: 0.6em;
 						font-weight: bold;
