@@ -8,7 +8,7 @@ def create_questionario(estagio, acertos, id_usuario):
     conn = conexao.connect()
     try: 
         cursor = conn.cursor()
-        query = ("insert into questionario (fase_questionario, acertos_questionario, id_questionario) values ('{}', {}, {})".format(estagio, acertos, id_usuario))
+        query = ("insert into questionario (fase_questionario, acertos_questionario, id_usuario) values ('{}', {}, {})".format(estagio, acertos, id_usuario))
         cursor.execute(query)
         conn.commit()
 
@@ -104,6 +104,22 @@ def delet_questionario(id):
         return "Questionatio deletado!"
     except(Exception, Error) as error:
         return ("Erro ao deletar Questionario:", error)
+    finally:
+        cursor.close()
+        conexao.close_connection(conn)
+
+#pesquisar questionario
+def pesquisar_questionario(id_user, estagio):
+    conexao = Conexao()
+    conn = conexao.connect()
+    try: 
+        cursor = conn.cursor()
+        query = ("select fase_questionario from questionario where id_usuario = {} and fase_questionario = '{}'".format(id_user, estagio))
+        cursor.execute(query)
+        result = cursor.fetchall()
+        return result[0][0]
+    except(Exception, Error) as error:
+        return ("Erro ao pesquisar questionario: ", error)
     finally:
         cursor.close()
         conexao.close_connection(conn)
