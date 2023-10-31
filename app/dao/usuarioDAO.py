@@ -233,7 +233,7 @@ def pesquisar_usuario(email):
         query = ("select  * from usuario where email_usuario = '{}'".format(email))
         cursor.execute(query)
         result = cursor.fetchall()
-        return result[0]
+        return result[0][0]
     except(Exception, Error) as error:
         return ("Erro ao buscar usuario: ", error)
     finally:
