@@ -39,7 +39,7 @@ def fundo():
 @app.route('/cadastrar', methods=['POST'])
 def cadastrar():
     resposta = usuarioController.cadastra()
-    return render_template('cadastro.html', static = 'app/static', resposta = resposta)
+    return resposta
 
 @app.route('/logar', methods=['POST'])
 def logar():
