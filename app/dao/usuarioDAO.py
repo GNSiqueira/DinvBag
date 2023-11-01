@@ -224,3 +224,18 @@ def obter_id(inform):
     finally:
         cursor.close()
         conexao.close_connection(conn)
+
+def pesquisar_usuario(email):
+    conexao = Conexao()
+    conn = conexao.connect()
+    try:
+        cursor = conn.cursor()
+        query = ("select  * from usuario where email_usuario = '{}'".format(email))
+        cursor.execute(query)
+        result = cursor.fetchall()
+        return result[0][0]
+    except(Exception, Error) as error:
+        return ("Erro ao buscar usuario: ", error)
+    finally:
+        cursor.close()
+        conexao.close_connection(conn)
