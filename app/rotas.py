@@ -51,3 +51,7 @@ def questionariotesouro():
     retorno = perguntaController.carregar_questionario_tesouro()
     questionarioController.criar_questionario()
     return render_template('questionario.html', static = 'app/static', dados = retorno)
+
+@app.route('/ver')
+def ver():
+    return request.cookies
