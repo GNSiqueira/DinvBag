@@ -1,21 +1,8 @@
 from app.models.perguntaModel import Pergunta
+from app.controllers import tipoPerguntaController
 from app.dao import perguntaDAO
 from flask import request
 from random import sample
-
-def cadastrar_pergunta():
-    textopergunta = request.form['textopergunta']
-    alt1 = request.form['alt1']
-    alt2 = request.form['alt2']
-    alt3 = request.form['alt3']
-    alt4 = request.form['alt4']
-    resposta = request.form['resposta']
-    idtipopergunta = request.form['idtipopergunta']
-    idquestionario = 1
-
-    resposta = perguntaDAO.create_pergunta(textopergunta, alt1, alt2, alt3, alt4, resposta, idtipopergunta, idquestionario)
-
-    return resposta
 
 def carregar_questionario_tesouro():
     retorno = {

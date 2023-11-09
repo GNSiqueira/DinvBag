@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pergunta</title>
+</head>
+
+<body>
+    <form action="/cadastrarPergunta" method="post">
+        <label for="texto-pergunta">Texto Pergunta</label>
+        <input type="text" name="texto-pergunta" id="texto-pergunta"><br>
+        <label for="alternativa1">Alternativa 1</label>
+        <input type="text" name="alternativa1" id="alternativa1"><br>
+        <label for="alternativa2">Alternativa 2</label>
+        <input type="text" name="alternativa2" id="alternativa2"><br>
+        <label for="alternativa3">Alternativa 3</label>
+        <input type="text" name="alternativa3" id="alternativa3"><br>
+        <label for=alternativa4>Alternativa 4</label>
+        <input type="text" name=alternativa4 id=alternativa4><br>
+        <label for="resposta-pergunta">Resposta Pergunta</label>
+        <input type="text" name="resposta-pergunta" id="resposta-pergunta"><br>
+        <label for="id-tipo-pergunta">Tipo Pergunta</label>
+        <select name="id-tipo-pergunta" id="id-tipo-pergunta">
+        {% for tipo_pergunta in tipo_perguntas %}
+        <option value="{{ tipo_pergunta.get_id_tipo_pergunta() }}">{{ tipo_pergunta.get_nome_tipo_pergunta() }}</option>
+        {% endfor %}
+        </select><br>
+        <button type="submit">Adicionar</button>
+    </form>
+    <h1></h1>
+</body>
+
+</html>

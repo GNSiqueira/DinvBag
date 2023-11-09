@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, make_response
+from flask import Flask, render_template, request
 from app import app
 from app.controllers import usuarioController, perguntaController, questionarioController, tipoPerguntaController
 
@@ -51,6 +51,11 @@ def questionariotesouro():
     retorno = perguntaController.carregar_questionario_tesouro()
     questionarioController.criar_questionario()
     return render_template('questionario.html', static = 'app/static', dados = retorno)
+
+@app.route('/pergunta', methods=['GET'])
+def pergunta():
+    tipo_pergunta = tipoPerguntaController.read_tipo_pergunta()
+    return render_template('pergunta.html', tipo_perguntas = tipo_pergunta)
 
 @app.route('/ver')
 def ver():
