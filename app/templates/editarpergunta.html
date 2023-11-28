@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Pergunta</title>
+</head>
+<body>
+    {% for carregar in carregadas %}
+    <form action="/pergunta/editar" method="post">
+        <input type="hidden" name="id-pergunta" id="id-pergunta" value="{{ carregar.get_id_pergunta() }}">
+        <label for="texto-pergunta">Texto Pergunta</label>
+        <input type="text" name="texto-pergunta" id="texto-pergunta" value="{{ carregar.get_texto_pergunta() }}"><br>
+        <label for="alternativa1">Alternativa 1</label>
+        <input type="text" name="alternativa1" id="alternativa1" value="{{ carregar.get_alternativa1() }}"><br>
+        <label for="alternativa2">Alternativa 2</label>
+        <input type="text" name="alternativa2" id="alternativa2" value="{{ carregar.get_alternativa2() }}"><br>
+        <label for="alternativa3">Alternativa 3</label>
+        <input type="text" name="alternativa3" id="alternativa3" value="{{ carregar.get_alternativa3() }}"><br>
+        <label for=alternativa4>Alternativa 4</label>
+        <input type="text" name=alternativa4 id=alternativa4 value="{{ carregar.get_alternativa4() }}"><br>
+        <label for="resposta-pergunta">Resposta Pergunta</label>
+        <input type="text" name="resposta-pergunta" id="resposta-pergunta" value="{{ carregar.get_resposta_pergunta() }}"><br>
+        <label for="id-tipo-pergunta">Tipo Pergunta</label>
+        <select name="id-tipo-pergunta" id="id-tipo-pergunta">  
+        {% for tipo_pergunta in tipo_perguntas %}
+        <option value="{{ tipo_pergunta.get_id_tipo_pergunta() }}">{{ tipo_pergunta.get_nome_tipo_pergunta() }}</option>
+        {% endfor %}
+        </select><br>
+        <button type="submit">Editar</button>
+    </form>
+    {% endfor %}
+</body>
+</html>

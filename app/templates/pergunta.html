@@ -8,19 +8,19 @@
 </head>
 
 <body>
-    <form action="/cadastrarPergunta" method="post">
+    <form action="/pergunta" method="post">
         <label for="texto-pergunta">Texto Pergunta</label>
-        <input type="text" name="texto-pergunta" id="texto-pergunta"><br>
+        <input type="text" name="texto-pergunta" id="texto-pergunta" required><br>
         <label for="alternativa1">Alternativa 1</label>
-        <input type="text" name="alternativa1" id="alternativa1"><br>
+        <input type="text" name="alternativa1" id="alternativa1" required><br>
         <label for="alternativa2">Alternativa 2</label>
-        <input type="text" name="alternativa2" id="alternativa2"><br>
+        <input type="text" name="alternativa2" id="alternativa2" required><br>
         <label for="alternativa3">Alternativa 3</label>
-        <input type="text" name="alternativa3" id="alternativa3"><br>
+        <input type="text" name="alternativa3" id="alternativa3" required><br>
         <label for=alternativa4>Alternativa 4</label>
-        <input type="text" name=alternativa4 id=alternativa4><br>
+        <input type="text" name=alternativa4 id=alternativa4 required><br>
         <label for="resposta-pergunta">Resposta Pergunta</label>
-        <input type="text" name="resposta-pergunta" id="resposta-pergunta"><br>
+        <input type="text" name="resposta-pergunta" id="resposta-pergunta" required><br>
         <label for="id-tipo-pergunta">Tipo Pergunta</label>
         <select name="id-tipo-pergunta" id="id-tipo-pergunta">
         {% for tipo_pergunta in tipo_perguntas %}
@@ -29,7 +29,28 @@
         </select><br>
         <button type="submit">Adicionar</button>
     </form>
-    <h1></h1>
+    <hr>
+    {% for carregar in carregadas %}
+    <form action="/pergunta/editar" method="get">
+        <input type="hidden" name="id-pergunta" id="id-pergunta" value="{{ carregar.get_id_pergunta() }}">
+        <label for="texto-pergunta">Texto Pergunta</label>
+        <input type="text" name="texto-pergunta" id="texto-pergunta" value="{{ carregar.get_texto_pergunta() }}" disabled><br>
+        <label for="alternativa1">Alternativa 1</label>
+        <input type="text" name="alternativa1" id="alternativa1" value="{{ carregar.get_alternativa1() }}" disabled><br>
+        <label for="alternativa2">Alternativa 2</label>
+        <input type="text" name="alternativa2" id="alternativa2" value="{{ carregar.get_alternativa2() }}" disabled><br>
+        <label for="alternativa3">Alternativa 3</label>
+        <input type="text" name="alternativa3" id="alternativa3" value="{{ carregar.get_alternativa3() }}" disabled><br>
+        <label for=alternativa4>Alternativa 4</label>
+        <input type="text" name=alternativa4 id=alternativa4 value="{{ carregar.get_alternativa4() }}" disabled><br>
+        <label for="resposta-pergunta">Resposta Pergunta</label>
+        <input type="text" name="resposta-pergunta" id="resposta-pergunta" value="{{ carregar.get_resposta_pergunta() }}" disabled><br>
+        <label for="id-tipo-pergunta">Tipo Pergunta</label>
+        <input type="text" name="" id="" value="{{ carregar.get_id_tipo_pergunta() }}" disabled><br><br>
+        <button type="submit">Editar</button>
+        <button type="submit" formaction="/pergunta/deletar" formmethod="post">Deletar</button><br><br>   
+    </form>
+    {% endfor %}
 </body>
 
 </html>

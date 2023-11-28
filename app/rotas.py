@@ -55,26 +55,23 @@ def questionariotesouro():
 @app.route('/pergunta', methods=['POST', 'GET'])
 def cadastrar_pergunta():
     if request.method == "POST":
-        perguntaController.cadastra_pergunta()    
-        tipo_pergunta = tipoPerguntaController.read_tipo_pergunta()
-        todas_perguntas = perguntaController.read_pergunta()   
-         
-        return render_template('cadastrarpergunta.html', tipo_perguntas = tipo_pergunta, todas = todas_perguntas)
+        perguntaController.cadastrar_pergunta()             
+        return redirect(url_for('cadastrar_pergunta'))
     else:
         tipo_pergunta = tipoPerguntaController.read_tipo_pergunta()
         todas_perguntas = perguntaController.read_pergunta()        
-        return render_template('cadastrarpergunta.html',  tipo_perguntas = tipo_pergunta, todas = todas_perguntas)
+        return render_template('pergunta.html',  tipo_perguntas = tipo_pergunta, carregadas = todas_perguntas)
 
 @app.route('/pergunta/editar', methods=['POST', 'GET'])
 def editar_pergunta():
     if request.method == 'POST':
-        perguntaController.edita_pergunta()
+        perguntaController.editar_pergunta()
         return redirect(url_for('cadastrar_pergunta'))
 
     else: 
         tipo_pergunta = tipoPerguntaController.read_tipo_pergunta()
-        pergunta = perguntaController.read_pergunta_um() 
-        return render_template('modificarpergunta.html', perguntas = pergunta, tipo_perguntas = tipo_pergunta)
+        carregadas = perguntaController.read_pergunta_um() 
+        return render_template('editarpergunta.html', carregadas = carregadas, tipo_perguntas = tipo_pergunta)
 
 @app.route('/pergunta/deletar', methods=['POST'])
 def deletar_pergunta():

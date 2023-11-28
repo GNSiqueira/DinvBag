@@ -12,6 +12,8 @@ class Pergunta:
     #encapsulamento id_pergunta
     def get_id_pergunta(self):
        return self._id_pergunta
+    def set_id_pergunta(self, new_id_pergunta):
+        self._id_pergunta = new_id_pergunta
     
     #encápsulamento texto_pergunta
     def get_texto_pergunta(self):
