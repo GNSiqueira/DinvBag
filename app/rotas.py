@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from app import app
 from app.controllers import usuarioController, perguntaController, questionarioController, tipoPerguntaController
 
@@ -52,10 +52,34 @@ def questionariotesouro():
     questionarioController.criar_questionario()
     return render_template('questionario.html', static = 'app/static', dados = retorno)
 
-@app.route('/pergunta', methods=['GET'])
-def pergunta():
-    tipo_pergunta = tipoPerguntaController.read_tipo_pergunta()
-    return render_template('pergunta.html', tipo_perguntas = tipo_pergunta)
+@app.route('/pergunta', methods=['POST', 'GET'])
+def cadastrar_pergunta():
+    if request.method == "POST":
+        perguntaController.cadastra_pergunta()    
+        tipo_pergunta = tipoPerguntaController.read_tipo_pergunta()
+        todas_perguntas = perguntaController.read_pergunta()   
+         
+        return render_template('cadastrarpergunta.html', tipo_perguntas = tipo_pergunta, todas = todas_perguntas)
+    else:
+        tipo_pergunta = tipoPerguntaController.read_tipo_pergunta()
+        todas_perguntas = perguntaController.read_pergunta()        
+        return render_template('cadastrarpergunta.html',  tipo_perguntas = tipo_pergunta, todas = todas_perguntas)
+
+@app.route('/pergunta/editar', methods=['POST', 'GET'])
+def editar_pergunta():
+    if request.method == 'POST':
+        perguntaController.edita_pergunta()
+        return redirect(url_for('cadastrar_pergunta'))
+
+    else: 
+        tipo_pergunta = tipoPerguntaController.read_tipo_pergunta()
+        pergunta = perguntaController.read_pergunta_um() 
+        return render_template('modificarpergunta.html', perguntas = pergunta, tipo_perguntas = tipo_pergunta)
+
+@app.route('/pergunta/deletar', methods=['POST'])
+def deletar_pergunta():
+    perguntaController.deletar_pergunta()
+    return redirect(url_for('cadastrar_pergunta'))
 
 @app.route('/ver')
 def ver():
