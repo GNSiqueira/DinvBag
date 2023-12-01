@@ -188,3 +188,7 @@
 			});
 
 })(jQuery);
+
+function abrirPerfil(){
+	window.location.href = '/perfil';
+}
