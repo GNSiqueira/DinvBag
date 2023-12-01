@@ -178,7 +178,7 @@ def selecionar_perguntas(tipo):
     conn = conexao.connect()
     try:
         cursor = conn.cursor()
-        query = ("select p.* from pergunta p inner join tipo_pergunta t on t.id_tipo_pergunta = p.id_tipo_pergunta where tipo_pergunta = {};".format(tipo))
+        query = ("select p.* from pergunta p inner join tipo_pergunta t on t.id_tipo_pergunta = p.id_tipo_pergunta where tipo_pergunta = '{}';".format(tipo))
         cursor.execute(query)
         results = cursor.fetchall()
         conn.commit()
