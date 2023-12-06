@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Icone da página -->
+    <link rel="icon" href="{{url_for('static', filename='imagens/icone.jpg')}}">
+    <!-- Link para bootstrap(css) -->
+    <link rel="stylesheet" href="{{url_for('static', filename='bootstrap/css/bootstrap.min.css')}}">
+    <!-- Link para arquivo meu arquivo css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}">
+    <title>Perfil</title>
+</head>
+
+<body>
+  <header class="d-flex flex-column col-lg-3 navbar-header ">
+      <div class="foto-perfil">
+      </div>
+  </header>
+    <!-- Bootstrap(js) -->
+    <script src="{{url_for('static', filename='bootstrap/js/bootstrap.min.js')}}"></script>
+    <!-- meu JavaScripts -->
+    <script src="{{url_for('static', filename='js/perfil.js')}}"></script>
+</body>
+</html>

@@ -78,6 +78,11 @@ def deletar_pergunta():
     perguntaController.deletar_pergunta()
     return redirect(url_for('cadastrar_pergunta'))
 
+@app.route('/perfil', methods=['GET', 'POST'])
+def perfil():
+    return render_template('perfil.html', static = 'app/static')
+
 @app.route('/ver')
-def ver():
+def cookies():
     return request.cookies
+    
