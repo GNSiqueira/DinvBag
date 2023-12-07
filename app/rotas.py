@@ -78,6 +78,25 @@ def deletar_pergunta():
     perguntaController.deletar_pergunta()
     return redirect(url_for('cadastrar_pergunta'))
 
+@app.route('/perfil', methods=['GET', 'POST'])
+def perfil():
+    resposta = ''
+    if request.method == 'POST':
+        retorno = usuarioController.alterar_usuario()
+         
+        if retorno == True:    
+            return redirect(url_for('perfil'))
+        else:
+            resposta = 'Email invalido!'
+    
+    return render_template('perfil.html', static = 'app/static', resposta = resposta)
+
+@app.route('/test', methods = ['GET', 'POST'])
+def test():
+    test = 'daflçkghao'
+    return redirect(url_for('perfil'))
+
 @app.route('/ver')
-def ver():
+def cookies():
     return request.cookies
+    
