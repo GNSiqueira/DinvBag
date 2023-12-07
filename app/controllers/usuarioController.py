@@ -64,3 +64,18 @@ def loga():
         resposta = 'Usuario ou senha invalida'
         cookies = make_response(render_template('loginprincipal.html', static = 'app/static', resposta = resposta))
         return  resposta
+    
+# Método de alterar informações de Usuário
+def alterar_usuario():
+    iduser = request.cookies['iduser']
+    nome = request.form['nome']
+    email = request.form['email']
+    senha = request.form['senha']
+    classe = Usuario(iduser, nome, email, senha, None)
+    response = (requests.get('https://api.kickbox.com/v2/verify?email={}&apikey=live_1e27bce7d18d57a4847f59e24641789126f77fd50677ebfb900fbe585c06cbde'.format(email)).json()['result'])
+    if response == 'deliverable':
+        # usuarioDAO.update_usuario(inform = [classe.get_nome_usuario(), classe.get_email_usuario(), classe.get_senha_usuario(), classe.get_idusuario()])
+        return True
+    else:
+        return False
+    

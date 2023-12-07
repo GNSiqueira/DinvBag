@@ -12,11 +12,25 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}">
     <title>Perfil</title>
 </head>
+
 <body>
-    
+    <div class="container">
+        <br>
+        <form action="/perfil" method="post">
+            <label>Nome</label>
+            <input type="text" name="nome" id="nome" required><br>
+            <label>E-mail</label>
+            <input type="email" name="email" id="email" required><br>
+            <label>Senha</label>
+            <input type="password" name="senha" id="senha" required><br>
+            <button type="submit">Alterar</button>
+        </form>
+        <p>{{ resposta }}</p>
+    </div>
     <!-- Bootstrap(js) -->
     <script src="{{url_for('static', filename='bootstrap/js/bootstrap.min.js')}}"></script>
     <!-- meu JavaScripts -->
     <script src="{{url_for('static', filename='js/perfil.js')}}"></script>
 </body>
+
 </html>
