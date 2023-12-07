@@ -239,3 +239,18 @@ def pesquisar_usuario(email):
     finally:
         cursor.close()
         conexao.close_connection(conn)
+
+def update_usuario(inform):
+    conexao = Conexao()
+    conn = conexao.connect()
+    try:
+        cursor = conn.cursor()
+        query = ("update usuario set usuario nome_usuario = %s, email_usuario = %s, senha_usuario = %s where id_usuario = %s;")
+        cursor.execute(query, inform)
+        conn.commit()
+        pass
+    except(Exception, Error) as error:
+        return ('Erro ao fazer alterações: ', error)
+    finally:
+        cursor.close()
+        conexao.close_connection(conn)
